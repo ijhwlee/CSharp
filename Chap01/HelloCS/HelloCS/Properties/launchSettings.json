@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HelloCS": {
+      "commandName": "Project",
+      "commandLineArgs": "--help --name hwlee"
+    }
+  }
+}
