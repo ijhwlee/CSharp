@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Formatting": {
+      "commandName": "Project",
+      "commandLineArgs": "a b c"
+    }
+  }
+}
