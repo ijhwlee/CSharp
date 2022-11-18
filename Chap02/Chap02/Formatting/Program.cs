@@ -39,3 +39,22 @@ while (true)
   if (key.Key == ConsoleKey.Z && key.Modifiers == ConsoleModifiers.Control)
     break;
 }
+
+if(args.Length < 3)
+{
+  WriteLine("You must specify two colors and cursor size, e.g.");
+  WriteLine($"dotnet {AppDomain.CurrentDomain.FriendlyName} red yellow 50");
+  return;
+}
+
+ForegroundColor = (ConsoleColor)Enum.Parse(
+  enumType: typeof(ConsoleColor),
+  value: args[0],
+  ignoreCase: true);
+
+BackgroundColor = (ConsoleColor)Enum.Parse(
+  enumType: typeof(ConsoleColor),
+  value: args[1],
+  ignoreCase: true);
+
+CursorSize = int.Parse(args[2]);
