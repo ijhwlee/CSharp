@@ -20,3 +20,27 @@ WriteLine($" e % f = {e % f}");
 double g = 11.0;
 WriteLine($"g is {g:N1}, f is {f}");
 WriteLine($"g / f = {g / f}");
+
+bool a1 = true;
+bool b1 = false;
+WriteLine($"a1 & DoStuff() = {a1 & DoStuff()}");
+WriteLine($"b1 & DoStuff() = {b1 & DoStuff()}");
+
+WriteLine($"a1 && DoStuff() = {a1 && DoStuff()}");
+WriteLine($"b1 && DoStuff() = {b1 && DoStuff()}");
+
+WriteLine("Output integers as binary: ");
+WriteLine($"a =   {ToBinaryString(a)}");
+WriteLine($"b =   {ToBinaryString(b)}");
+WriteLine($"a & b =   {ToBinaryString(a&b)}");
+
+static bool DoStuff()
+{
+  WriteLine("I am doing some stuff.");
+  return true;
+}
+
+static string ToBinaryString(int value)
+{
+  return Convert.ToString(value, toBase: 2).PadLeft(8, '0');
+}
