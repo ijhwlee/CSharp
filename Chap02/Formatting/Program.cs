@@ -1,6 +1,27 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using static System.Console;
 
+string GetPlatformName(PlatformID id)
+{
+  string name;
+  switch(id)
+  {
+    case PlatformID.Win32NT:
+      name = "Windows NT or later";
+      break;
+    case PlatformID.Unix:
+      name = "Unix";
+      break;
+    case PlatformID.Other:
+      name = "Other";
+      break;
+    default:
+      name = "Unknown";
+      break;
+  }
+  return name;
+}
+
 int numberOfApples = 12;
 decimal pricePerApple = 0.35M;
 
@@ -57,4 +78,13 @@ BackgroundColor = (ConsoleColor)Enum.Parse(
   value: args[1],
   ignoreCase: true);
 
-CursorSize = int.Parse(args[2]);
+OperatingSystem os = Environment.OSVersion;
+PlatformID platformID = os.Platform;
+try
+{
+  CursorSize = int.Parse(args[2]);
+}
+catch (PlatformNotSupportedException)
+{
+  WriteLine($"The current platform({GetPlatformName(platformID)}) does not support changing the size of the cursor.");
+}
