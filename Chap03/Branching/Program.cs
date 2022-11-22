@@ -26,7 +26,7 @@ switch(number)
     break;
 }
 
-string path = @"C:\hwlee\github\CSharp\Chap03";
+string path = @".";
 Write("Press R for readonly or W for write: ");
 ConsoleKeyInfo key = ReadKey();
 WriteLine();
