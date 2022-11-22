@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operators", "Operators\Operators.csproj", "{7D1951F0-16E7-4D54-8DA1-B5C2859C0CB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationStatements", "IterationStatements\IterationStatements.csproj", "{C5BE8948-AE58-40E1-BCD3-6531D350F2BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IterationStatements", "IterationStatements\IterationStatements.csproj", "{C5BE8948-AE58-40E1-BCD3-6531D350F2BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Branching", "Branching\Branching.csproj", "{4C0F958B-03E5-49FA-9BD0-279F70EF03BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C5BE8948-AE58-40E1-BCD3-6531D350F2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5BE8948-AE58-40E1-BCD3-6531D350F2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5BE8948-AE58-40E1-BCD3-6531D350F2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0F958B-03E5-49FA-9BD0-279F70EF03BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0F958B-03E5-49FA-9BD0-279F70EF03BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0F958B-03E5-49FA-9BD0-279F70EF03BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0F958B-03E5-49FA-9BD0-279F70EF03BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
