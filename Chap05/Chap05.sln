@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConvergence", "AIConvergenceLibrary\AIConvergence.csproj", "{E1148959-1012-4EFC-A453-E26EF8CBD280}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConvergenceLibrary", "AIConvergenceLibrary\AIConvergenceLibrary.csproj", "{E1148959-1012-4EFC-A453-E26EF8CBD280}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{2513ACAF-7DBE-4982-AA1A-2BABC1C1AD39}"
 EndProject
