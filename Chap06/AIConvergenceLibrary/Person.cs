@@ -5,7 +5,7 @@ using static System.Console;
 
 namespace AIConvergence.Shared
 {
-  public partial class Person : object
+  public partial class Person : object, IComparable<Person>
   {
     public const string Species = "Homo Sapiens";
     public string Name;
@@ -53,7 +53,7 @@ namespace AIConvergence.Shared
       name = Name;
       dob = DateOfBirth;
     }
-    public void Deconstruct(out string name, out DateTime dob, 
+    public void Deconstruct(out string name, out DateTime dob,
       out WondersOfTheAncientWorld fav)
     {
       name = Name;
@@ -108,7 +108,7 @@ namespace AIConvergence.Shared
 
     public static int Factorial(int number)
     {
-      if(number < 0)
+      if (number < 0)
       {
         throw new ArgumentException(
           $"{nameof(number)} cannot be less than zero.");
@@ -125,13 +125,19 @@ namespace AIConvergence.Shared
     public void Poke()
     {
       AngerLevel++;
-      if(AngerLevel >= 3)
+      if (AngerLevel >= 3)
       {
-        if(Shout != null)
+        if (Shout != null)
         {
           Shout(this, EventArgs.Empty);
         }
       }
+    }
+
+    public int CompareTo(Person? other)
+    {
+      if (Name is null) return 0;
+      return Name.CompareTo(other?.Name);
     }
   }
 }
