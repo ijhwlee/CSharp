@@ -130,55 +130,35 @@ WriteLine($"{sam.Name}'s second child is is {sam.Children[1].Name}");
 WriteLine($"{sam.Name}'s first child is is {sam[0].Name}");
 WriteLine($"{sam.Name}'s second child is is {sam[1].Name}");
 
-object[] passengers =
-{
-  new FirstClassPassenger {AirMiles = 1_419},
-  new FirstClassPassenger {AirMiles = 16_562},
-  new BusinessClassPassenger(),
-  new CoachClassPassenger { CarryOnKG = 25.7},
-  new CoachClassPassenger { CarryOnKG = 0},
-};
+var harry = new Person { Name = "Harry" };
+var mary = new Person { Name = "Mary" };
+var jill = new Person { Name = "Jill" };
 
-foreach (object passenger in passengers)
+var baby1 = mary.ProcreateWith(harry);
+baby1.Name = "Gary";
+
+var baby2 = Person.Procreate(harry, jill);
+var baby3 = harry * mary;
+
+WriteLine($"{harry.Name} has {harry.Children.Count} children.");
+WriteLine($"{mary.Name} has {mary.Children.Count} children.");
+WriteLine($"{jill.Name} has {jill.Children.Count} children.");
+WriteLine(
+  format: "{0}'s first child is named \"{1}\".",
+  arg0: harry.Name,
+  arg1: harry.Children[0].Name);
+
+WriteLine($"5! is {Person.Factorial(5)}");
+
+static void Harry_Shout(object? sender, EventArgs e)
 {
-  decimal flightCost = passenger switch
-  {
-    //FirstClassPassenger p when p.AirMiles > 35000 => 1500M,
-    //FirstClassPassenger p when p.AirMiles > 15000 => 1750M,
-    //FirstClassPassenger _ => 2000M,
-    FirstClassPassenger p => p.AirMiles switch
-    {
-      > 35000 => 1500M,
-      > 1500 => 1750M,
-      _ => 2000M
-    },
-    BusinessClassPassenger _ => 1000M,
-    CoachClassPassenger p when p.CarryOnKG < 10.0 => 500M,
-    CoachClassPassenger _ => 650M,
-    _ => 800M
-  };
-  WriteLine($"Flight costs {flightCost:C} for {passenger}");
+  if (sender is null) return;
+  Person p = (Person)sender;
+  WriteLine($"{p.Name} is this angry: {p.AngerLevel}");
 }
 
-ImmutablePerson jeff = new()
-{
-  FirstName = "Jeff",
-  LastName = "Winger"
-};
-//jeff.FirstName = "Goeff";
-
-ImmutableVechicle car = new()
-{
-  Brand = "Hyundai G80 3.3HTRAC",
-  Color = "Silver White Tint",
-  Wheels = 4
-};
-ImmutableVechicle repaintedCar = car
-  with { Color = "Polynomial Bronze" };
-
-WriteLine($"Original car color was {car.Color}");
-WriteLine($"New car color is {repaintedCar.Color}");
-
-ImmutableAnimal oscar = new("Oscar", "Labrador");
-var (who, what) = oscar;
-WriteLine($"{who} is a {what}");
+harry.Shout += Harry_Shout;
+harry.Poke();
+harry.Poke();
+harry.Poke();
+harry.Poke();
