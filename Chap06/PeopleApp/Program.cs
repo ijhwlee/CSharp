@@ -138,6 +138,7 @@ var baby1 = mary.ProcreateWith(harry);
 baby1.Name = "Gary";
 
 var baby2 = Person.Procreate(harry, jill);
+var baby3 = harry * mary;
 
 WriteLine($"{harry.Name} has {harry.Children.Count} children.");
 WriteLine($"{mary.Name} has {mary.Children.Count} children.");
