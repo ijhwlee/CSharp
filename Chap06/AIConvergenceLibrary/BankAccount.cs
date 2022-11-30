@@ -6,7 +6,7 @@ namespace AIConvergence.Shared
 {
   public class BankAccount
   {
-    public string AccountName;
+    public string? AccountName;
     public decimal Balance;
     public static readonly decimal InterestRate = 0.012M;
   }

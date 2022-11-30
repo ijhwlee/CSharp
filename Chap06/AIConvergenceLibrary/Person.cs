@@ -15,7 +15,7 @@ namespace AIConvergence.Shared
     public List<Person> Children = new List<Person>();
     public readonly string HomePlanet = "Earth";
     public readonly DateTime Instantiated;
-    public event EventHandler Shout;
+    public event EventHandler? Shout;
     public int AngerLevel;
 
     public Person()
