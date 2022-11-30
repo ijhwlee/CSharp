@@ -216,3 +216,18 @@ foreach (Person p in people)
 {
   WriteLine($"  {p.Name}");
 }
+
+DisplacementVector dv1 = new(3, 5);
+DisplacementVector dv2 = new(-2, 7);
+DisplacementVector dv3 = dv1 + dv2;
+WriteLine($"({dv1.x}, {dv1.y}) + ({dv2.x}, {dv2.y}) = ({dv3.x}, {dv3.y})");
+
+Employee john = new()
+{
+  Name = "John Jones",
+  DateOfBirth = new(year: 1990, month: 7, day: 28)
+};
+john.EmployeeCode = "IJ001";
+john.HireDate = new(year: 2022, month: 12, day: 1);
+john.WriteToConsole();
+WriteLine($"{john.Name} was hired on {john.HireDate:dd/MM/yy}");
