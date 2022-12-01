@@ -19,4 +19,8 @@ public class Employee : Person
       arg1: DateOfBirth,
       arg2: HireDate);
   }
+    public override string ToString()
+    {
+        return $"{Name}'s code is {EmployeeCode}";
+    }
 }

@@ -233,3 +233,46 @@ john.WriteToConsole();
 WriteLine($"{john.Name} was hired on {john.HireDate:dd/MM/yy}");
 
 WriteLine(john.ToString());
+
+Employee aliceInEmployee = new Employee
+{ Name = "Alice", EmployeeCode = "IJ002" };
+
+Person aliceInPerson = aliceInEmployee;
+aliceInEmployee.WriteToConsole();
+aliceInPerson.WriteToConsole();
+WriteLine(aliceInEmployee.ToString());
+WriteLine(aliceInPerson.ToString());
+
+if (aliceInPerson is Employee)
+{
+  WriteLine($"{nameof(aliceInPerson)} IS an Employee");
+  Employee explicitAlice = (Employee)aliceInPerson;
+}
+
+Employee aliceAsEmployee = aliceInPerson as Employee;
+if(aliceAsEmployee != null)
+{
+  WriteLine($"{nameof(aliceInPerson)} AS an Employee");
+}
+
+try
+{
+  john.TimeTravel(new DateTime(2025, 12, 31));
+  john.TimeTravel(new DateTime(1950, 12, 31));
+}
+catch (PersonException ex)
+{
+  WriteLine(ex.Message);
+}
+
+string email1 = "ijhwlee@gmail.com";
+string email2 = "hwlee&inje.ac.kr";
+WriteLine(
+  "{0} is a valid e-mail address: {1}",
+  arg0: email1,
+  arg1: email1.IsValidEmail());
+
+WriteLine(
+  "{0} is a valid e-mail address: {1}",
+  arg0: email2,
+  arg1: email2.IsValidEmail());
