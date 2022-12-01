@@ -231,3 +231,5 @@ john.EmployeeCode = "IJ001";
 john.HireDate = new(year: 2022, month: 12, day: 1);
 john.WriteToConsole();
 WriteLine($"{john.Name} was hired on {john.HireDate:dd/MM/yy}");
+
+WriteLine(john.ToString());
