@@ -1,7 +1,6 @@
 # CSharp
 C# projects
 
-2022/12/1
-Solution Explorer ¿¡¼­ Dependencies ¿¡¼­ Analyzers¿¡¼­ °æ°í¾ÆÀÌÄÜÀÌ ³ªÅ¸³ª´Â °æ¿ì¿¡ 
-ÇØ´ç ProjectÀÇ *.csproj ÆÄÀÏ¿¡¼­ <TargetFramework>net6.0</TargetFramework>À» ¼öÁ¤ÇÏ¿© ¿øÇÏ´Â °ÍÀ¸·Î 
-¼öÁ¤ÇÏ¸é ¹®Á¦°¡ ÇØ°áµÈ´Ù. 
+- **2022/12/1** Solution Explorer ì—ì„œ Dependencies ì—ì„œ Analyzersì—ì„œ ê²½ê³ ì•„ì´ì½˜ì´ ë‚˜íƒ€ë‚˜ëŠ” ê²½ìš°ì— 
+í•´ë‹¹ Projectì˜ *.csproj íŒŒì¼ì—ì„œ <TargetFramework>net6.0</TargetFramework>ì„ ìˆ˜ì •í•˜ì—¬ ì›í•˜ëŠ” ê²ƒìœ¼ë¡œ 
+ìˆ˜ì •í•˜ë©´ ë¬¸ì œê°€ í•´ê²°ëœë‹¤. 
