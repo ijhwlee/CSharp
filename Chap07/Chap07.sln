@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesAndNamespces", "AssembliesAndNamespces\AssembliesAndNamespces.csproj", "{803180D5-EB0E-4059-A8C8-7A9CAA04ACCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesAndNamespces", "AssembliesAndNamespces\AssembliesAndNamespces.csproj", "{803180D5-EB0E-4059-A8C8-7A9CAA04ACCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetEverywhere", "DotNetEverywhere\DotNetEverywhere.csproj", "{8B3997C7-91D4-4B11-ADBC-0E2B0231BAB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetEverywhere", "DotNetEverywhere\DotNetEverywhere.csproj", "{8B3997C7-91D4-4B11-ADBC-0E2B0231BAB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIConvergenceLibrary", "AIConvergenceLibrary\AIConvergenceLibrary.csproj", "{DD6DD4A7-ACA6-41B5-B517-5FF11AF09465}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8B3997C7-91D4-4B11-ADBC-0E2B0231BAB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B3997C7-91D4-4B11-ADBC-0E2B0231BAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B3997C7-91D4-4B11-ADBC-0E2B0231BAB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6DD4A7-ACA6-41B5-B517-5FF11AF09465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6DD4A7-ACA6-41B5-B517-5FF11AF09465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6DD4A7-ACA6-41B5-B517-5FF11AF09465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6DD4A7-ACA6-41B5-B517-5FF11AF09465}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

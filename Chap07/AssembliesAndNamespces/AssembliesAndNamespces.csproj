@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Inje.AIConvergence.CSdotnet.SharedLibrary" Version="0.9.1" />
+  </ItemGroup>
 </Project>
