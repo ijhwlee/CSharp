@@ -5,5 +5,5 @@ C# projects
 해당 Project의 *.csproj 파일에서 <TargetFramework>net6.0</TargetFramework>을 수정하여 원하는 것으로 
 수정하면 문제가 해결된다. 
 
-- **2022/12/2** Nuget package를 만들 때는 *.csproj 파일에 <PackageReadmeFile>filename</PackageReadmeFile>
+- **2022/12/2** Nuget package를 만들 때는 *.csproj 파일에 ```<PackageReadmeFile>filename</PackageReadmeFile>```을 지정해 주어야 함.
 
