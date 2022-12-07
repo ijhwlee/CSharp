@@ -5,7 +5,7 @@
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Inje.AIConvergence.CSdotnet.SharedLibrary</PackageId>
-    <PackageVersion>0.9.1</PackageVersion>
+    <PackageVersion>0.9.2</PackageVersion>
     <Title>C# 10 and .NET 6 Shared Library</Title>
     <Authors>Hyung Won Lee based on Mark J Price</Authors>
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>

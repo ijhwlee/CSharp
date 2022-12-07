@@ -7,4 +7,4 @@ C# projects
 
 - **2022/12/2** Nuget package를 만들 때는 *.csproj 파일에 ```<PackageReadmeFile>filename</PackageReadmeFile>```을 지정해 주어야 함.
 
-- **2022/12/3** Tope program style의 프로젝트에서 Program.c 에 아무 실행코드도 입력하지 않으면 Main이 정의 되지 않게 됨.
+- **2022/12/3** Top program style의 프로젝트에서 Program.c 에 아무 실행코드도 입력하지 않으면 Main이 정의 되지 않게 됨.
