@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using static System.Console;
 
 var cities = new List<string>();
@@ -35,3 +36,20 @@ foreach (string city in cities)
 {
   WriteLine($" {city}");
 }
+
+var immutableCities = cities.ToImmutableList();
+var newList = immutableCities.Add("Milano");
+
+Write("Immutable list of cities: ");
+foreach(string city in immutableCities)
+{
+  Write($" {city}");
+}
+WriteLine();
+
+Write("New list of cities: ");
+foreach (string city in newList)
+{
+  Write($" {city}");
+}
+WriteLine();
