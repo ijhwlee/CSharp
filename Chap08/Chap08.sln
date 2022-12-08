@@ -13,13 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRegularExpressio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithLists", "WorkingWithLists\WorkingWithLists.csproj", "{24E3DB47-CE7B-443C-A07E-8FDC851CB8EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDictionaries", "WorkingWithDicrionaries\WorkingWithDictionaries.csproj", "{859A00BC-0F0B-4588-BDD0-3B0000485D85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithQueues", "WorkingWithQueues\WorkingWithQueues.csproj", "{7DBF45F4-4171-454A-9BD7-CBC067BE83A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithQueues", "WorkingWithQueues\WorkingWithQueues.csproj", "{7DBF45F4-4171-454A-9BD7-CBC067BE83A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRanges", "WorkingWithRanges\WorkingWithRanges.csproj", "{CB50C99E-FD63-42C7-935F-552815C2C2DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRanges", "WorkingWithRanges\WorkingWithRanges.csproj", "{CB50C99E-FD63-42C7-935F-552815C2C2DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithNetworkResources", "WorkingWithNetworkResources\WorkingWithNetworkResources.csproj", "{07565032-225E-4958-875E-90D914977E88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithNetworkResources", "WorkingWithNetworkResources\WorkingWithNetworkResources.csproj", "{07565032-225E-4958-875E-90D914977E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDictionaries", "WorkingWithDictionaries\WorkingWithDictionaries.csproj", "{FA4DB5CB-89CB-4335-A515-1E725FA6952E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,6 @@ Global
 		{24E3DB47-CE7B-443C-A07E-8FDC851CB8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E3DB47-CE7B-443C-A07E-8FDC851CB8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E3DB47-CE7B-443C-A07E-8FDC851CB8EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{859A00BC-0F0B-4588-BDD0-3B0000485D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{859A00BC-0F0B-4588-BDD0-3B0000485D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{859A00BC-0F0B-4588-BDD0-3B0000485D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{859A00BC-0F0B-4588-BDD0-3B0000485D85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7DBF45F4-4171-454A-9BD7-CBC067BE83A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7DBF45F4-4171-454A-9BD7-CBC067BE83A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DBF45F4-4171-454A-9BD7-CBC067BE83A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{07565032-225E-4958-875E-90D914977E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07565032-225E-4958-875E-90D914977E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07565032-225E-4958-875E-90D914977E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA4DB5CB-89CB-4335-A515-1E725FA6952E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA4DB5CB-89CB-4335-A515-1E725FA6952E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA4DB5CB-89CB-4335-A515-1E725FA6952E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA4DB5CB-89CB-4335-A515-1E725FA6952E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
