@@ -5,7 +5,7 @@
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Inje.AIConvergence.CSdotnet.SharedLibrary</PackageId>
-    <PackageVersion>0.9.2</PackageVersion>
+    <PackageVersion>0.9.3</PackageVersion>
     <Title>C# 10 and .NET 6 Shared Library</Title>
     <Authors>Hyung Won Lee based on Mark J Price</Authors>
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
@@ -18,6 +18,8 @@
     <PackageTags>string extensions aiconvergence csharp dotnet</PackageTags>
     <Description>
       This is the first Nueget package for test.
+      Class StringExtensions : string extension
+      Class Utils : 
     </Description>
     <PackageReadmeFile>
       Readme.md     
