@@ -38,9 +38,15 @@ static string? GetProjectPath()
 {
   string? appName = Assembly.GetExecutingAssembly().GetName().Name;
   var dir = new DirectoryInfo(Environment.CurrentDirectory);
-  while (dir?.Name != appName)
+  //WriteLine($"dir.FullName : {dir.FullName}");
+  bool launchedFromVS = (dir.FullName.Contains("Debug\\net") || dir.FullName.Contains("Release\\net"));
+  if (launchedFromVS)
   {
-    dir = Directory.GetParent(dir==null?".": dir.FullName);
+    while (dir?.Name != appName)
+    {
+      dir = Directory.GetParent(dir == null ? "." : dir.FullName);
+    }
+    return dir?.FullName;
   }
-  return dir?.FullName;
+  return Environment.CurrentDirectory;
 }
