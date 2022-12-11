@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Xml.Serialization;
+using NewJson = System.Text.Json.JsonSerializer;
 using AIConvergence.Shared;
 
 using static System.Console;
@@ -8,6 +9,45 @@ using static System.IO.Path;
 
 List<Person> people = GeneratePersons();
 SaveXmlAndShow(people);
+SaveJsonAndShow(people);
+
+static void SaveJsonAndShow(List<Person> people)
+{
+  WriteLine("=============== SaveJsonAndShow =====================");
+  string path = Combine(CurrentDirectory, "people.json");
+  using (StreamWriter jsonStream = File.CreateText(path))
+  {
+    Newtonsoft.Json.JsonSerializer jss = new();
+    jss.Serialize(jsonStream, people);
+  }
+  WriteLine("Written {0:N0} bytes of JSON to {1}",
+    arg0: new FileInfo(path).Length,
+    arg1: path);
+  WriteLine();
+
+  WriteLine(File.ReadAllText(path));
+
+  using (FileStream jsonLoad = File.Open(path, FileMode.Open))
+  {
+    List<Person>? loadedPeople =
+      NewJson.Deserialize(utf8Json: jsonLoad,
+      returnType: typeof(List<Person>)) as List<Person>;
+    //await NewJson.DeserializeAsync(utf8Json: jsonLoad,
+    //returnType: typeof(List<Person>)) as List<Person>;
+    while (true)
+    {
+      if (loadedPeople is not null)
+      {
+        foreach (Person p in loadedPeople)
+        {
+          WriteLine("{0} has {1} {2}.",
+            p.LastName, p.Children?.Count ?? 0, (p.Children?.Count ?? 0) > 1 ? "children" : "child");
+        }
+        break;
+      }
+    }
+  }
+}
 
 static void SaveXmlAndShow(List<Person> people)
 {
@@ -24,6 +64,19 @@ static void SaveXmlAndShow(List<Person> people)
   WriteLine();
 
   WriteLine(File.ReadAllText(path));
+
+  using (FileStream xmlLoad = File.Open(path, FileMode.Open))
+  {
+    List<Person>? loadedPeople =xs.Deserialize(xmlLoad) as List<Person>;
+    if(loadedPeople is not null)
+    {
+      foreach(Person p in loadedPeople)
+      {
+        WriteLine("{0} has {1} {2}.",
+          p.LastName, p.Children?.Count ?? 0, (p.Children?.Count ?? 0) >1?"children" :"child");
+      }
+    }
+  }
 }
 static List<Person> GeneratePersons()
 {
@@ -59,6 +112,12 @@ static List<Person> GeneratePersons()
           FirstName = "Sally",
           LastName = "Cox",
           DateOfBirth = new(2001, 9, 11)
+        },
+        new(0M)
+        {
+          FirstName = "Tom",
+          LastName = "Cox",
+          DateOfBirth = new(2005, 2, 5)
         }
       }
     },
