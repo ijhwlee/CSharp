@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AIConvergence.Shared;
@@ -13,11 +14,64 @@ FilteredIncludes();
 QueryingProducts();
 QueryingWithLike();
 
-if (AddProduct(categoryId: 6, productName: "Bob's Burger", price: 500M))
-{
-  WriteLine("Add a product successfully.");
-}
+//if (AddProduct(categoryId: 6, productName: "Bob's Burger", price: 500M))
+//{
+//  WriteLine("Add a product successfully.");
+//}
+
+//if (IncreaseProductPrice(productNameStartWith: "Bob", amount: 20M))
+//{
+//  WriteLine("Update product price successfully.");
+//}
+
+int deleted = DeleteProducts(productNameStartWith: "Bob");
+WriteLine($"{deleted} product(s) were deleted.");
+
 ListProducts();
+
+static int DeleteProducts(
+  string productNameStartWith)
+{
+  using (Northwind db = new())
+  {
+    ILoggerFactory loggerFactory = db.GetService<ILoggerFactory>();
+    loggerFactory.AddProvider(new ConsoleLoggerProvider());
+    using (IDbContextTransaction t = db.Database.BeginTransaction())
+    {
+      WriteLine("Transaction iolation level: {0}",
+        arg0: t.GetDbTransaction().IsolationLevel);
+      IQueryable<Product>? products = db.Products?.Where(
+        p => p.ProductName.StartsWith(productNameStartWith));
+      if (products is null)
+      {
+        WriteLine("No products found to delete.");
+        return 0;
+      }
+      else
+      {
+        db.Products?.RemoveRange(products);
+      }
+      int affected = db.SaveChanges();
+      t.Commit();
+      return affected;
+    }
+  }
+}
+
+static bool IncreaseProductPrice(
+  string productNameStartWith, decimal amount)
+{
+  using (Northwind db = new())
+  {
+    ILoggerFactory loggerFactory = db.GetService<ILoggerFactory>();
+    loggerFactory.AddProvider(new ConsoleLoggerProvider());
+    Product updateProduct = db.Products.First(
+      p => p.ProductName.StartsWith(productNameStartWith));
+    updateProduct.Cost += amount;
+    int affected = db.SaveChanges();
+    return (affected == 1);
+  }
+}
 
 static bool AddProduct(
   int categoryId, string productName, decimal? price)
