@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
 using static System.Console;
 
 namespace CoursesAndStudents;
@@ -16,13 +17,20 @@ public class Academy : DbContext
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
     base.OnConfiguring(optionsBuilder);
-    string path = Path.Combine(
-      Environment.CurrentDirectory, "Academy.db");
-    WriteLine($"Using {path} database fie.");
-    optionsBuilder.UseSqlite(path);
+    //string path = Path.Combine(
+    //  Environment.CurrentDirectory, "Academy.db");
+    //WriteLine($"Using {path} database file.");
+    //optionsBuilder.UseSqlite($"Filename={path}");
+    //SQLitePCL.Batteries.Init();
 
+    WriteLine($"Connecting SQL Server...");
+    string connection = "Data Source=.\\SQLEXPRESS;" +
+      "Initial Catalog=Academy;" +
+      "Integrated Security=true;" +
+      "MultipleActiveResultSets=true;";
+    optionsBuilder.UseSqlServer(connection);
     //optionsBuilder.UseSqlServer(
-    //  @"Data Source=.;Initial Catalog=Academy;Integrated Security=true;MultipleActiveResultSets=true;");
+    //  @"Data Source=.\SQLEXPRESS;Initial Catalog=Academy;Integrated Security=true;MultipleActiveResultSets=true;");
   }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -59,12 +67,12 @@ public class Academy : DbContext
       .HasMany(c => c.Students)
       .WithMany(s => s.Courses)
       .UsingEntity(e => e.HasData(
-        new { CourseId = 1, StudentId = 20230001 },
-        new { CourseId = 1, StudentId = 20230002 },
-        new { CourseId = 1, StudentId = 20230003 },
-        new { CourseId = 1, StudentId = 20230004 },
-        new { CourseId = 2, StudentId = 20230002 },
-        new { CourseId = 3, StudentId = 20230004 }
+        new { CoursesCourseId = 1, StudentsStudentId = 20230001 },
+        new { CoursesCourseId = 1, StudentsStudentId = 20230002 },
+        new { CoursesCourseId = 1, StudentsStudentId = 20230003 },
+        new { CoursesCourseId = 1, StudentsStudentId = 20230004 },
+        new { CoursesCourseId = 2, StudentsStudentId = 20230002 },
+        new { CoursesCourseId = 3, StudentsStudentId = 20230004 }
         ));
   }
 }
