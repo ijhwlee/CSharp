@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithTasks", "Working
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedAndChildTasks", "NestedAndChildTasks\NestedAndChildTasks.csproj", "{9B5F795F-7359-44C3-BC5E-43D672EDB2AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizingResourceAccess", "SynchronizingResourceAccess\SynchronizingResourceAccess.csproj", "{CAB915F8-93AF-4653-8CD1-5B363F7E855C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9B5F795F-7359-44C3-BC5E-43D672EDB2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B5F795F-7359-44C3-BC5E-43D672EDB2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B5F795F-7359-44C3-BC5E-43D672EDB2AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
