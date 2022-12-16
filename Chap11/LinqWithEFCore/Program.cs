@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AIConvergence.Shared;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
 using Systen.Linq;
 using static System.Console;
 
@@ -9,7 +10,40 @@ JoinCategoriesAndProducts();
 AggregateProducts();
 FilterAndSortExtension();
 CustomExtensionMethods();
+OutputProductsAsXml();
+ProcessSettings();
 
+static void ProcessSettings()
+{
+  WriteLine("=============== ProcessSettings =================");
+  XDocument doc = XDocument.Load("settings.xml");
+  var appSettings = doc.Descendants("appSettings")
+    .Descendants("add")
+    .Select(node => new
+    {
+      Key = node.Attribute("key").Value,
+      Value = node.Attribute("value").Value
+    }).ToArray();
+  foreach(var item in appSettings)
+  {
+    WriteLine($"{item.Key}: {item.Value}");
+  }
+}
+static void OutputProductsAsXml()
+{
+  WriteLine("=================== OutputProductsAsXml =================");
+  using(var db = new Northwind())
+  {
+    var productsForXml = db.Products.ToArray();
+    var xml = new XElement("products",
+      from p in productsForXml
+      select new XElement("product",
+        new XAttribute("id", p.ProductId),
+        new XAttribute("price", p.UnitPrice),
+        new XElement("name", p.ProductName)));
+    WriteLine(xml.ToString());
+  }
+}
 static void CustomExtensionMethods()
 {
   WriteLine("=================== CustomExtensionMethods =====================");
