@@ -1,11 +1,28 @@
 ﻿
+using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace AIConvergence.Shared
 {
 
   public static class StringExtensions
   {
+    public static Task<bool> IsValidXmlTagAsync(this string input)
+    {
+      if(input == null)
+      {
+        return Task.FromException<bool>(
+          new ArgumentNullException("Missing input parameter"));
+      }
+      if (input.Length == 0)
+      {
+        return Task.FromException<bool>(
+          new ArgumentNullException("Input parameter is empty"));
+      }
+      return Task.FromResult(Regex.IsMatch(input,
+        @"^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"));
+    }
     public static bool IsValidXmlTag(this string input)
     {
       return Regex.IsMatch(input,

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringApp", "MonitoringApp\MonitoringApp.csproj", "{E86C34A4-52E5-4177-A511-E1D15967CD60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitoringApp", "MonitoringApp\MonitoringApp.csproj", "{E86C34A4-52E5-4177-A511-E1D15967CD60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringLib", "MonitoringLib\MonitoringLib.csproj", "{D496AD9D-CFF0-4C8A-BC5F-B3D2297029E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitoringLib", "MonitoringLib\MonitoringLib.csproj", "{D496AD9D-CFF0-4C8A-BC5F-B3D2297029E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithTasks", "WorkingWithTasks\WorkingWithTasks.csproj", "{C4BFEF50-0B10-43C8-9D25-147CDA73311F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithTasks", "WorkingWithTasks\WorkingWithTasks.csproj", "{C4BFEF50-0B10-43C8-9D25-147CDA73311F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NestedAndChildTasks", "NestedAndChildTasks\NestedAndChildTasks.csproj", "{9B5F795F-7359-44C3-BC5E-43D672EDB2AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestedAndChildTasks", "NestedAndChildTasks\NestedAndChildTasks.csproj", "{9B5F795F-7359-44C3-BC5E-43D672EDB2AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizingResourceAccess", "SynchronizingResourceAccess\SynchronizingResourceAccess.csproj", "{CAB915F8-93AF-4653-8CD1-5B363F7E855C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchronizingResourceAccess", "SynchronizingResourceAccess\SynchronizingResourceAccess.csproj", "{CAB915F8-93AF-4653-8CD1-5B363F7E855C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{FB4E234B-5B01-4941-A2B3-68E775991E5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB915F8-93AF-4653-8CD1-5B363F7E855C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB4E234B-5B01-4941-A2B3-68E775991E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB4E234B-5B01-4941-A2B3-68E775991E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB4E234B-5B01-4941-A2B3-68E775991E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB4E234B-5B01-4941-A2B3-68E775991E5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
