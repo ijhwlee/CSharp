@@ -6,12 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AIConvergence.Shared
 {
-    [Keyless]
-    public partial class EmployeeTerritory
-    {
-        [Column(TypeName = "INT")]
-        public long EmployeeId { get; set; }
-        [Column(TypeName = "nvarchar] (20")]
-        public string TerritoryId { get; set; } = null!;
-    }
+  [Keyless]
+  public partial class EmployeeTerritory
+  {
+    [Column(TypeName = "INT")]
+    public int EmployeeId { get; set; }
+    [Required]
+    [Column(TypeName = "nvarchar (20)")]
+    [StringLength(20)]
+    public string TerritoryId { get; set; } = null!;
+  }
 }
