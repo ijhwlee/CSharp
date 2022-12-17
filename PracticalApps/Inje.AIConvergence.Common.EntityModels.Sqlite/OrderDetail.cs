@@ -20,7 +20,7 @@ namespace AIConvergence.Shared
         [Column(TypeName = "INT")]
         public long ProductId { get; set; }
         [Column(TypeName = "money")]
-        public byte[] UnitPrice { get; set; } = null!;
+        public decimal? UnitPrice { get; set; } = null!;
         [Column(TypeName = "smallint")]
         public long Quantity { get; set; }
         public double Discount { get; set; }

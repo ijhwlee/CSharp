@@ -29,7 +29,7 @@ namespace AIConvergence.Shared
         [Column(TypeName = "nvarchar (20)")]
         public string? QuantityPerUnit { get; set; }
         [Column(TypeName = "money")]
-        public byte[]? UnitPrice { get; set; }
+        public decimal? UnitPrice { get; set; }
         [Column(TypeName = "smallint")]
         public long? UnitsInStock { get; set; }
         [Column(TypeName = "smallint")]
@@ -37,7 +37,7 @@ namespace AIConvergence.Shared
         [Column(TypeName = "smallint")]
         public long? ReorderLevel { get; set; }
         [Column(TypeName = "bit")]
-        public byte[] Discontinued { get; set; } = null!;
+        public bool Discontinued { get; set; } = false;
 
         [ForeignKey("CategoryId")]
         [InverseProperty("Products")]

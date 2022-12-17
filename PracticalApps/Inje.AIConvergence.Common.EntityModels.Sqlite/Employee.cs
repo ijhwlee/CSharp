@@ -26,9 +26,9 @@ namespace AIConvergence.Shared
         [Column(TypeName = "nvarchar (25)")]
         public string? TitleOfCourtesy { get; set; }
         [Column(TypeName = "datetime")]
-        public byte[]? BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         [Column(TypeName = "datetime")]
-        public byte[]? HireDate { get; set; }
+        public DateTime? HireDate { get; set; }
         [Column(TypeName = "nvarchar (60)")]
         public string? Address { get; set; }
         [Column(TypeName = "nvarchar (15)")]
