@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using CoursesAndStudents;
 using static System.Console;
 
-GenerateData();
+await GenerateData();
 
-static async void GenerateData()
+static async Task<int> GenerateData()
 {
   WriteLine("============= GenerateDate in Code First Example ==================");
   using (Academy a = new())
@@ -29,4 +29,5 @@ static async void GenerateData()
       }
     }
   }
+  return 0;
 }
