@@ -5,16 +5,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace Inje.AIConvergence.Shared;
 
 public static class NorthwindContextExtensions
 {
+  private static Dictionary<string, string> SourceData = new Dictionary<string, string>
+  { {"LAPTOP-CMAETB3C", ".;" },
+    {"HOME-201119", ".\\SQLEXPRESS;" },
+    {"Odyssey", ".;" }};
   public static IServiceCollection AddNorthwindContext(
-    this IServiceCollection services, string connectionString =
-    "Data Source=.\\SQLEXPRESS;" + "Initial Catalog=Northwind;" +
-    "Integrated Security=true;" + "MultipleActiveResultSets=true;")
+    this IServiceCollection services, string connectionString = "")
+  //this IServiceCollection services, string connectionString =
+  //"Data Source=.;" + "Initial Catalog=Northwind;" +
+  //"Integrated Security=true;" + "MultipleActiveResultSets=true;")
   {
+    string dbServer = SourceData[System.Environment.MachineName];
+    connectionString =
+    "Data Source=" + dbServer + "Initial Catalog=Northwind;" +
+    "Integrated Security=true;" + "MultipleActiveResultSets=true;";
     services.AddDbContext<NorthwindContext>(options =>
       options.UseSqlServer(connectionString));
     return services;
