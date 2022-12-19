@@ -15,21 +15,20 @@ namespace AIConvergence.Shared
     {
         [Key]
         [Column(TypeName = "INT")]
-        public int OrderId { get; set; }
+        public long OrderId { get; set; }
         [Key]
         [Column(TypeName = "INT")]
-        public int ProductId { get; set; }
+        public long ProductId { get; set; }
         [Column(TypeName = "money")]
         public decimal? UnitPrice { get; set; } = null!;
         [Column(TypeName = "smallint")]
-        public int Quantity { get; set; }
+        public long Quantity { get; set; }
         public double Discount { get; set; }
 
-        [ForeignKey("OrderId")]
-        [InverseProperty("OrderDetails")]
-        public virtual Order Order { get; set; } = null!;
-        [ForeignKey("ProductId")]
-        [InverseProperty("OrderDetails")]
-        public virtual Product Product { get; set; } = null!;
-    }
+  [ForeignKey("OrderId")]
+  [InverseProperty("OrderDetails")]
+  public virtual Order Order { get; set; } = null!;
+  [ForeignKey("ProductId")]
+  [InverseProperty("OrderDetails")]
+  public virtual Product Product { get; set; } = null!;
 }

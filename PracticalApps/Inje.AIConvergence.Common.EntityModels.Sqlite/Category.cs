@@ -4,18 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace AIConvergence.Shared
+namespace Inje.AIConvergence.Shared;
+
+[Index("CategoryName", Name = "CategoryName")]
+public partial class Category
 {
-  [Index("CategoryName", Name = "CategoryName")]
-  public partial class Category
+  public Category()
   {
-    public Category()
-    {
-      Products = new HashSet<Product>();
-    }
+    Products = new HashSet<Product>();
+  }
 
     [Key]
-    public int CategoryId { get; set; }
+    public long CategoryId { get; set; }
     [Required]
     [Column(TypeName = "nvarchar (15)")]
     [StringLength(15)]
@@ -25,7 +25,6 @@ namespace AIConvergence.Shared
     [Column(TypeName = "image")]
     public byte[]? Picture { get; set; }
 
-    [InverseProperty("Category")]
-    public virtual ICollection<Product> Products { get; set; }
-  }
+  [InverseProperty("Category")]
+  public virtual ICollection<Product> Products { get; set; }
 }

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Inje.AIConvergence.CSdotnet.SharedLibrary" Version="0.9.1" />
+    <PackageReference Include="Inje.AIConvergence.CSdotnet.SharedLibrary" Version="0.9.5" />
     <PackageReference Include="dialectsoftware.collections.matrix" Version="1.0.0" />
   </ItemGroup>
 </Project>

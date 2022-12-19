@@ -3,7 +3,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace AIConvergence.Shared
+namespace Inje.AIConvergence.Shared
 {
 
   public static class StringExtensions

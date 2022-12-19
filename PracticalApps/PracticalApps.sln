@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common.E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common.DataContext.Sqlite", "Inje.AIConvergence.Common.DataContext.Sqlite\Inje.AIConvergence.Common.DataContext.Sqlite.csproj", "{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common.EntityModels.SqlServer", "Inje.AIConvergence.Common.EntityModels.SqlServer\Inje.AIConvergence.Common.EntityModels.SqlServer.csproj", "{FC06EF24-3B99-4B42-B0E7-56C1550A10F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Common.DataContext.SqlServer", "Inje.AIConvergence.Common.DataContext.SqlServer\Inje.AIConvergence.Common.DataContext.SqlServer.csproj", "{1EDF0735-1BD9-47EC-8ECF-4C7A4F857BC5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC06EF24-3B99-4B42-B0E7-56C1550A10F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC06EF24-3B99-4B42-B0E7-56C1550A10F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC06EF24-3B99-4B42-B0E7-56C1550A10F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC06EF24-3B99-4B42-B0E7-56C1550A10F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1EDF0735-1BD9-47EC-8ECF-4C7A4F857BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1EDF0735-1BD9-47EC-8ECF-4C7A4F857BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1EDF0735-1BD9-47EC-8ECF-4C7A4F857BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1EDF0735-1BD9-47EC-8ECF-4C7A4F857BC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
