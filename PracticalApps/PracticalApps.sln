@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common.EntityModels.Sqlite", "Inje.AIConvergence.Common.EntityModels.Sqlite\Inje.AIConvergence.Common.EntityModels.Sqlite.csproj", "{00E87C43-0F7E-4470-863F-A9FA7B4F538B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Common.ContextLib", "Inje.AIConvergence.Common.ContextLib\Inje.AIConvergence.Common.ContextLib.csproj", "{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common.ContextLib", "Inje.AIConvergence.Common.ContextLib\Inje.AIConvergence.Common.ContextLib.csproj", "{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Web", "Inje.AIConvergence.Web\Inje.AIConvergence.Web.csproj", "{2A796E10-D4AB-4B6A-98F5-DA7478871890}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF4CA01-5A01-4720-B5C8-2B02F6F8BE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A796E10-D4AB-4B6A-98F5-DA7478871890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A796E10-D4AB-4B6A-98F5-DA7478871890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A796E10-D4AB-4B6A-98F5-DA7478871890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A796E10-D4AB-4B6A-98F5-DA7478871890}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
