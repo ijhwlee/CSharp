@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using AIConvergence.Shared;
+using Inje.AIConvergence.Shared;
 using DialectSoftware.Collections;
 using DialectSoftware.Collections.Generics;
 using System.Xml.Linq;

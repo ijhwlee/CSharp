@@ -4,14 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace AIConvergence.Shared
+namespace Inje.AIConvergence.Shared;
+
+[Keyless]
+public partial class EmployeeTerritory
 {
-    [Keyless]
-    public partial class EmployeeTerritory
-    {
-        [Column(TypeName = "INT")]
-        public long EmployeeId { get; set; }
-        [Column(TypeName = "nvarchar] (20")]
-        public string TerritoryId { get; set; } = null!;
-    }
+  [Column(TypeName = "INT")]
+  public long EmployeeId { get; set; }
+  [Column(TypeName = "nvarchar] (20")]
+  public string TerritoryId { get; set; } = null!;
 }

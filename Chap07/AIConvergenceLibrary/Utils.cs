@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using static System.Environment;
 
-namespace AIConvergence.Shared
+namespace Inje.AIConvergence.Shared
 {
   //
   // Summary:
