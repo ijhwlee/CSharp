@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace AIConvergence.Shared
+namespace Inje.AIConvergence.Shared
 {
     [Keyless]
     public partial class ProductsAboveAveragePrice

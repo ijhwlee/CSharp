@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AIConvergence.Shared;
+namespace Inje.AIConvergence.Shared;
 
 public static class NorthwindContextExtensions
 {

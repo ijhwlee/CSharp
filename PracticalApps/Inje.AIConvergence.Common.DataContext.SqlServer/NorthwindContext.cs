@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace AIConvergence.Shared;
+namespace Inje.AIConvergence.Shared;
 
 public partial class NorthwindContext : DbContext
 {
