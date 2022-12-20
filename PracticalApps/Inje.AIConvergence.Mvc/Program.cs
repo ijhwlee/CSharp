@@ -10,7 +10,7 @@ if(System.Environment.MachineName == "HOME-201119")
   connectionString = builder.Configuration.GetConnectionString("DefaultHOME-201119");
 else if (System.Environment.MachineName == "Laptop")
   connectionString = builder.Configuration.GetConnectionString("DefaultLaptop");
-else if (System.Environment.MachineName == "Odyssey")
+else if (System.Environment.MachineName == "LAPTOP-8N40M1AT")
   connectionString = builder.Configuration.GetConnectionString("DefaultOdyssey");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));

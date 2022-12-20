@@ -1,5 +1,7 @@
 ﻿using Inje.AIConvergence.Mvc.Models;
+using Inje.AIConvergence.Shared;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Inje.AIConvergence.Mvc.Controllers
@@ -7,15 +9,23 @@ namespace Inje.AIConvergence.Mvc.Controllers
   public class HomeController : Controller
   {
     private readonly ILogger<HomeController> _logger;
+    private readonly NorthwindContext db;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, NorthwindContext db)
     {
       _logger = logger;
+      this.db = db;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-      return View();
+      HomeIndexViewModel model = new
+      (
+        VisitorCount: (new Random()).Next(1, 1001),
+        Categories: await db.Categories.ToListAsync(),
+        Products: await db.Products.ToListAsync()
+      );
+      return View(model);
     }
 
     public IActionResult Privacy()
