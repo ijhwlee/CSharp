@@ -1,4 +1,5 @@
 using Inje.AIConvergence.Mvc.Data;
+using Inje.AIConvergence.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,15 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 if(System.Environment.MachineName == "HOME-201119")
   connectionString = builder.Configuration.GetConnectionString("DefaultHOME-201119");
-else if (System.Environment.MachineName == "Laptop")
+else if (System.Environment.MachineName == "LAPTOP-CMAETB3C")
   connectionString = builder.Configuration.GetConnectionString("DefaultLaptop");
 else if (System.Environment.MachineName == "LAPTOP-8N40M1AT")
   connectionString = builder.Configuration.GetConnectionString("DefaultOdyssey");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
