@@ -13,3 +13,5 @@ C# projects
 
 - **2022/12/13** DataBase example에서 bool deleted = await a.Database.EnsureDeletedAsync(); 코드를 실행하면 프로그램이 다운됨. SqlServer를 사용하는 경우에만 현상이 발생함. SQLite을 사용하는 경우에는 정상적으로 실행이 됨. 뭔가 DataBase에 연결이 안되는 것 같은 데 다른 예제에서는 정상적으로 연결되고 실행이 되었음.
 - - 해결함. main 에서 await으로 호출해야 정상적으로 동작함. async 함수를 await으로 호출하지 않으면 바로 프로그램이 종료함. Chap10/CoursesAndStudents project.
+
+- **2022/12/21** Error like "InvalidOperationException: Unable to resolve service for type 'WebApplication1.Data.BloggerRepository' while attempting to activate 'WebApplication1.Controllers.BlogController'." occurs when there is no Dependency Injection for corresponding Class.
