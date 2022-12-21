@@ -49,7 +49,7 @@ public partial class NorthwindContext : DbContext
     if (!optionsBuilder.IsConfigured)
     {
       //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Northwind;Integrated Security=true;");
-      optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=true;");
+      optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS01;Initial Catalog=Northwind;Integrated Security=true;");
     }
   }
 
