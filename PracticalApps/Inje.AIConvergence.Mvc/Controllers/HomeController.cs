@@ -19,23 +19,24 @@ namespace Inje.AIConvergence.Mvc.Controllers
       this.db = db;
     }
 
-    public async Task<IActionResult> Index()
+    [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any)]
+    public IActionResult Index()
     {
       _logger.LogError("This is a serious error (not really!)");
       _logger.LogWarning("This is your first warning!");
       _logger.LogWarning("This is your second warning!");
       _logger.LogInformation("I am in the Index method of HomeController.");
       WriteLine("[DEBUG-hwlee]I am in the Index method of HomeController.");
-      return View();
-      //HomeIndexViewModel model = new
-      //(
-      //  VisitorCount: (new Random()).Next(1, 1001),
-      //  Categories: await db.Categories.ToListAsync(),
-      //  Products: await db.Products.ToListAsync()
-      //);
-      //return View(model);
+      HomeIndexViewModel model = new
+      (
+        VisitorCount: (new Random()).Next(1, 1001),
+        Categories: db.Categories.ToList(),
+        Products: db.Products.ToList()
+      );
+      return View(model);
     }
 
+    [Route("private")]
     [Authorize(Roles = "Administrators")]
     public IActionResult Privacy()
     {

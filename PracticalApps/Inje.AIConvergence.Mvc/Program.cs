@@ -7,15 +7,25 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-if(System.Environment.MachineName == "HOME-201119")
+var connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindHOME-201119");
+if (System.Environment.MachineName == "HOME-201119")
+{
   connectionString = builder.Configuration.GetConnectionString("DefaultHOME-201119");
+  connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindHOME-201119");
+}
 else if (System.Environment.MachineName == "LAPTOP-CMAETB3C")
+{
   connectionString = builder.Configuration.GetConnectionString("DefaultLaptop");
+  connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindLaptop");
+}
 else if (System.Environment.MachineName == "LAPTOP-8N40M1AT")
+{
   connectionString = builder.Configuration.GetConnectionString("DefaultOdyssey");
+  connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindOdyssey");
+}
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddNorthwindContext(connectionNorthwind);
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
