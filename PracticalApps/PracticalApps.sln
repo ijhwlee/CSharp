@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common.E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Web", "Inje.AIConvergence.Web\Inje.AIConvergence.Web.csproj", "{D20DAA65-A6DC-4737-92F3-9252D624555D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Razor.Employees", "Inje.AIConvergence.Razor.Employees\Inje.AIConvergence.Razor.Employees.csproj", "{977D6B86-E1BF-4A07-A1BC-F7C2C67785AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Razor.Employees", "Inje.AIConvergence.Razor.Employees\Inje.AIConvergence.Razor.Employees.csproj", "{977D6B86-E1BF-4A07-A1BC-F7C2C67785AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Mvc", "Inje.AIConvergence.Mvc\Inje.AIConvergence.Mvc.csproj", "{932E24EB-BA3E-4AEB-BD34-A7ED774259F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Mvc", "Inje.AIConvergence.Mvc\Inje.AIConvergence.Mvc.csproj", "{932E24EB-BA3E-4AEB-BD34-A7ED774259F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

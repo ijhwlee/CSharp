@@ -1,0 +1,41 @@
+﻿@model Inje.AIConvergence.Mvc.Models.HomeModelBindingViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+  ViewData["Title"] = "Model Binding Demo";
+}
+<h1>@ViewData["Title"]</h1>
+<div>
+  Enter values for your thing in the following form:
+</div>
+<form method="post" action="/home/modelbinding">
+  <input name="id" value="5" />
+  <input name="color" value="Red" />
+  <input name="emailaddress" value="hwlee@Inje.ac.kr" />
+  <input type="submit" />
+</form>
+@if (Model != null)
+{
+  <h2>Submitted Thing</h2>
+  <hr />
+  <div>
+    <dl class="dl-horizontal">
+      <dt>Model.Thing.Id</dt>
+      <dd>@Model.Thing.Id</dd>
+      <dt>Model.Thing.Color</dt>
+      <dd>@Model.Thing.Color</dd>
+      <dt>Model.Thing.EmailAddress</dt>
+      <dd>@Html.DisplayFor( model => model.Thing.EmailAddress)</dd>
+    </dl>
+  </div>
+  @if (Model.HasErrors)
+  {
+    <div>
+      @foreach(string errorMessage in Model.ValidationErrors)
+      {
+        <div class="alert alert-danger" role="alert">@errorMessage</div>
+      }
+    </div>
+  }
+}
