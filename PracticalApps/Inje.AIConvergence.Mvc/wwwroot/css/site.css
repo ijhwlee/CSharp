@@ -20,4 +20,5 @@ body {
 #product-columns
 {
   column-count: 3;
+  text-align: left;
 }

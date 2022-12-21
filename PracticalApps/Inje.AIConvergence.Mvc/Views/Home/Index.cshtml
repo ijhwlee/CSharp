@@ -78,7 +78,7 @@
                 <a asp-controller="Home"
                    asp-action="ProductDetail"
                    asp-route-id="@p.ProductId">
-                   @p.ProductName costs @(p.UnitPrice is null ? "zero" : p.UnitPrice.Value.ToString("C"))
+                   @p.ProductName costs @(p.UnitPrice is null ? "zero" : p.UnitPrice.Value.ToString("$#,##0.00"))
                  </a>
               </li>
             }
