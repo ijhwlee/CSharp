@@ -21,10 +21,15 @@ public static class NorthwindContextExtensions
   //"Data Source=.;" + "Initial Catalog=Northwind;" +
   //"Integrated Security=true;" + "MultipleActiveResultSets=true;")
   {
-    string dbServer = SourceData[System.Environment.MachineName];
-    connectionString =
-    "Data Source=" + dbServer + "Initial Catalog=Northwind;" +
-    "Integrated Security=true;" + "MultipleActiveResultSets=true;";
+    WriteLine($"[DEBUG-hwlee]NorthwindExtensions:AddNorthwindContext connectionString = {connectionString}");
+    if (connectionString == string.Empty)
+    {
+      string dbServer = SourceData[System.Environment.MachineName];
+      connectionString =
+      "Data Source=" + dbServer + "Initial Catalog=Northwind;" +
+      "Integrated Security=true;" + "MultipleActiveResultSets=true;";
+    }
+    WriteLine($"[DEBUG-hwlee]NorthwindExtensions:AddNorthwindContext(after) connectionString = {connectionString}");
     services.AddDbContext<NorthwindContext>(options =>
       options.UseSqlServer(connectionString));
     return services;
