@@ -13,8 +13,8 @@ public static class NorthwindContextExtensions
 {
   private static Dictionary<string, string> SourceData = new Dictionary<string, string>
   { {"LAPTOP-CMAETB3C", ".;" },
-    {"HOME-201119", ".\\SQLEXPRESS;" },
-    {"Odyssey", ".;" }};
+    {"HOME-201119", ".\\SQLEXPRESS01;" },
+    {"LAPTOP-8N40M1AT", ".\\SQLEXPRESS;" }};
   public static IServiceCollection AddNorthwindContext(
     this IServiceCollection services, string connectionString = "")
   //this IServiceCollection services, string connectionString =
