@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Inje.AIConvergence.Shared;
 using static System.Console;
 using Microsoft.EntityFrameworkCore;
+using Inje.AIConvergence.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +44,9 @@ builder.Services.AddControllers(options =>
 })
 .AddXmlDataContractSerializerFormatters()
 .AddXmlSerializerFormatters();
+
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

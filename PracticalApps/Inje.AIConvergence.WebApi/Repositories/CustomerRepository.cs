@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Inje.AIConvergence.Shared;
 using System.Collections.Concurrent;
+using static System.Console;
 
 namespace Inje.AIConvergence.WebApi.Repositories;
 
@@ -54,6 +55,7 @@ public class CustomerRepository : ICustomerRepository
 
   public Task<IEnumerable<Customer>> RetrieveAllAsync()
   {
+    WriteLine("[DEBUG-hwlee]CusotmerRepository:RetriveAllAsync called");
     return Task.FromResult(customersCache is null ? Enumerable.Empty<Customer>() : customersCache.Values);
   }
 
