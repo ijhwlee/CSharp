@@ -57,6 +57,7 @@ public class CustomersController : ControllerBase
     {
       return BadRequest();
     }
+    c.Orders = new List<Order>();
     if (!ModelState.IsValid)
     {
       return BadRequest(ModelState);
