@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inje.AIConvergence.Shared
@@ -47,6 +48,7 @@ namespace Inje.AIConvergence.Shared
     public string? Fax { get; set; }
 
     [InverseProperty("Customer")]
+    [XmlIgnore]
     public virtual ICollection<Order> Orders { get; set; }
 
     [ForeignKey("CustomerId")]

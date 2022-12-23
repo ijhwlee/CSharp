@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Inje.AIConvergence.Shared;
 using Inje.AIConvergence.WebApi.Repositories;
 using System.Collections.Generic;
@@ -16,11 +17,12 @@ public class CustomersController : ControllerBase
   private ICustomerRepository repo;
   public CustomersController(ICustomerRepository repo)
   {
+    WriteLine($"[DEBUG-hwlee]CustomersController:constructor called repo = {repo}");
     this.repo = repo;
   }
   [HttpGet]
   [ProducesResponseType(200, Type = typeof(IEnumerable<Customer>))]
-  public async Task<IEnumerable<Customer>> GetCustomers(string country)
+  public async Task<IEnumerable<Customer>> GetCustomers(string? country)
   {
     WriteLine($"[DEBUG-hwlee]CustomersController:GetCustomers called country = {country}");
     if (string.IsNullOrWhiteSpace(country))
@@ -101,6 +103,18 @@ public class CustomersController : ControllerBase
   public async Task<IActionResult> Delete(string id)
   {
     WriteLine($"[DEBUG-hwlee]CustomersController:Delete called id = {id}");
+    if (id == "bad")
+    {
+      var problemDetails = new ProblemDetails
+      {
+        Status = StatusCodes.Status400BadRequest,
+        Type = "https://localhost:5003/customers/failed-to-delete",
+        Title = $"Customer ID {id} found but failed to delete.",
+        Detail = "More details like Company Name, Country and so on.",
+        Instance = HttpContext.Request.Path
+      };
+      return BadRequest(problemDetails);
+    }
     var existing = await repo.RetrieveAsync(id);
     if (existing == null)
     {

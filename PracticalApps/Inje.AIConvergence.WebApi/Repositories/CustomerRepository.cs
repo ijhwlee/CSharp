@@ -61,6 +61,7 @@ public class CustomerRepository : ICustomerRepository
 
   public Task<Customer?> RetrieveAsync(string id)
   {
+    WriteLine($"[DEBUG-hwlee]CusotmerRepository:RetriveAsync called id = {id}");
     id = id.ToUpper();
     if (customersCache is null) return null!;
     customersCache.TryGetValue(id, out Customer? c);
