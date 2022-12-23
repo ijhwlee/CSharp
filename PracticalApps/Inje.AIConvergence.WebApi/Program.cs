@@ -1,8 +1,11 @@
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Inje.AIConvergence.Shared;
 using static System.Console;
 using Microsoft.EntityFrameworkCore;
 using Inje.AIConvergence.WebApi.Repositories;
+using Microsoft.AspNetCore.HttpLogging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,17 +50,38 @@ builder.Services.AddControllers(options =>
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
+builder.Services.AddHttpLogging(options =>
+{
+  options.LoggingFields = HttpLoggingFields.All;
+  options.RequestBodyLogLimit = 4096;
+  options.ResponseBodyLogLimit = 4096;
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+  c.SwaggerDoc("v1", new() { Title = "Inje University AI Convergence API", Version = "v1" });
+});
 
 var app = builder.Build();
+
+app.UseHttpLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
-  app.UseSwaggerUI();
+  app.UseSwaggerUI( c =>
+  {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json",
+      "Inje University AI Convergence API Version 1");
+    c.SupportedSubmitMethods(new[]
+    {
+      SubmitMethod.Get, SubmitMethod.Post,
+      SubmitMethod.Put, SubmitMethod.Delete
+    });
+  });
 }
 
 app.UseHttpsRedirection();

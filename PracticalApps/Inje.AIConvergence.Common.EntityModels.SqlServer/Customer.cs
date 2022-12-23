@@ -53,6 +53,7 @@ namespace Inje.AIConvergence.Shared
 
     [ForeignKey("CustomerId")]
     [InverseProperty("Customers")]
+    [XmlIgnore]
     public virtual ICollection<CustomerDemographic> CustomerTypes { get; set; }
   }
 }
