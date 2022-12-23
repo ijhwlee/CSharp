@@ -15,3 +15,5 @@ C# projects
 - - 해결함. main 에서 await으로 호출해야 정상적으로 동작함. async 함수를 await으로 호출하지 않으면 바로 프로그램이 종료함. Chap10/CoursesAndStudents project.
 
 - **2022/12/21** Error like "InvalidOperationException: Unable to resolve service for type 'WebApplication1.Data.BloggerRepository' while attempting to activate 'WebApplication1.Controllers.BlogController'." occurs when there is no Dependency Injection for corresponding Class.
+
+- **2022/12/23** The WebApi function as GetCustomers(string? country) can be requested as /api/customers, but GetCustomers(string country) cannot be called without country parametr. It generate an error
