@@ -12,11 +12,13 @@ namespace Inje.AIConvergence.Mvc.Controllers
   {
     private readonly ILogger<HomeController> _logger;
     private readonly NorthwindContext db;
+    private readonly IHttpClientFactory clientFactory;
 
-    public HomeController(ILogger<HomeController> logger, NorthwindContext db)
+    public HomeController(ILogger<HomeController> logger, NorthwindContext db, IHttpClientFactory clientFactory)
     {
       _logger = logger;
       this.db = db;
+      this.clientFactory = clientFactory;
     }
 
     [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any)]
@@ -91,6 +93,25 @@ namespace Inje.AIConvergence.Mvc.Controllers
         return NotFound($"No products cost more than {price:$#,##0.00}.");
       }
       ViewData["MaxPrice"] = price.Value.ToString("$#,##0.00");
+      return View(model);
+    }
+    public async Task<IActionResult> Customers(string country)
+    {
+      string uri;
+      if (string.IsNullOrEmpty(country))
+      {
+        ViewData["Title"] = "All Customers Worldwide";
+        uri = "api/customers";
+      }
+      else
+      {
+        ViewData["Title"] = $"Customers in {country}";
+        uri = $"api/customers/?country={country}";
+      }
+      HttpClient client = clientFactory.CreateClient(name: "Inje.AIConvergence.WebApi");
+      HttpRequestMessage request = new(method: HttpMethod.Get, requestUri: uri);
+      HttpResponseMessage response = await client.SendAsync(request);
+      IEnumerable<Customer>? model = await response.Content.ReadFromJsonAsync<IEnumerable<Customer>>();
       return View(model);
     }
   }

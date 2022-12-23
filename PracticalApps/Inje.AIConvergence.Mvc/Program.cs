@@ -2,10 +2,18 @@ using Inje.AIConvergence.Mvc.Data;
 using Inje.AIConvergence.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient(name: "Inje.AIConvergence.WebApi",
+  configureClient: options =>
+  {
+    options.BaseAddress = new Uri("https://localhost:5003/");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue("application/json", 1.0));
+  });
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindHOME-201119");
 if (System.Environment.MachineName == "HOME-201119")

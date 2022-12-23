@@ -9,7 +9,10 @@ using Microsoft.AspNetCore.HttpLogging;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//builder.WebHost.UseUrls("https://localhost:5003/");
+
 // Add services to the container.
+builder.Services.AddCors();
 var connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindHOME-201119");
 if (System.Environment.MachineName == "HOME-201119")
 {
@@ -65,6 +68,14 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+app.UseCors(configurePolicy: options =>
+{
+  options.WithMethods("GET", "POST", "PUT", "DELETE");
+  options.WithOrigins(
+    "https://localhost:5001" // allow requests from the MVC client
+  );
+});
 
 app.UseHttpLogging();
 
