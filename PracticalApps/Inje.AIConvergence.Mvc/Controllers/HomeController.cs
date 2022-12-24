@@ -110,21 +110,32 @@ namespace Inje.AIConvergence.Mvc.Controllers
     }
     public async Task<IActionResult> Customers(string country)
     {
-      string uri;
-      if (string.IsNullOrEmpty(country))
+      IEnumerable<Customer>? model;
+      try
       {
-        ViewData["Title"] = "All Customers Worldwide";
-        uri = "api/customers";
+
+        string uri;
+        if (string.IsNullOrEmpty(country))
+        {
+          ViewData["Title"] = "All Customers Worldwide";
+          uri = "api/customers";
+        }
+        else
+        {
+          ViewData["Title"] = $"Customers in {country}";
+          uri = $"api/customers/?country={country}";
+        }
+        HttpClient client = clientFactory.CreateClient(name: "Inje.AIConvergence.WebApi");
+        HttpRequestMessage request = new(method: HttpMethod.Get, requestUri: uri);
+        HttpResponseMessage response = await client.SendAsync(request);
+        model = await response.Content.ReadFromJsonAsync<IEnumerable<Customer>>();
       }
-      else
+      catch (Exception ex)
       {
-        ViewData["Title"] = $"Customers in {country}";
-        uri = $"api/customers/?country={country}";
+        _logger.LogWarning($"The Minimal.WebApi service is not responding. Exception: {ex.Message}");
+        ViewData["Title"] = "Customers List";
+        model = null;
       }
-      HttpClient client = clientFactory.CreateClient(name: "Inje.AIConvergence.WebApi");
-      HttpRequestMessage request = new(method: HttpMethod.Get, requestUri: uri);
-      HttpResponseMessage response = await client.SendAsync(request);
-      IEnumerable<Customer>? model = await response.Content.ReadFromJsonAsync<IEnumerable<Customer>>();
       return View(model);
     }
   }
