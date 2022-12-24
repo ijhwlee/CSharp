@@ -17,3 +17,12 @@ C# projects
 - **2022/12/21** Error like "InvalidOperationException: Unable to resolve service for type 'WebApplication1.Data.BloggerRepository' while attempting to activate 'WebApplication1.Controllers.BlogController'." occurs when there is no Dependency Injection for corresponding Class.
 
 - **2022/12/23** The WebApi function as GetCustomers(string? country) can be requested as /api/customers, but GetCustomers(string country) cannot be called without country parametr. It generate an error
+
+- **2022/12/24** Property set function like 
+```
+public int IntValue
+{
+  get => IntValue;
+}
+```
+will define infinite loop for get_IntValue.
