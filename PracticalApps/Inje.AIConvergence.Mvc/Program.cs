@@ -14,6 +14,13 @@ builder.Services.AddHttpClient(name: "Inje.AIConvergence.WebApi",
     options.DefaultRequestHeaders.Accept.Add(
       new MediaTypeWithQualityHeaderValue("application/json", 1.0));
   });
+builder.Services.AddHttpClient(name: "Minimal.WebApi",
+  configureClient: options =>
+  {
+    options.BaseAddress = new Uri("https://localhost:5005/");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue("application/json", 1.0));
+  });
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var connectionNorthwind = builder.Configuration.GetConnectionString("NorthwindHOME-201119");
 if (System.Environment.MachineName == "HOME-201119")

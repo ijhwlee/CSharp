@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Inje.AIConvergence.Common.DataContext.SqlServer\Inje.AIConvergence.Common.DataContext.SqlServer.csproj" />
+    <ProjectReference Include="..\Inje.AIConvergence.Common\Inje.AIConvergence.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

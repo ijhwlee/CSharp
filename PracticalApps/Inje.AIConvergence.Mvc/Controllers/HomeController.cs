@@ -1,5 +1,6 @@
 ﻿using Inje.AIConvergence.Mvc.Models;
 using Inje.AIConvergence.Shared;
+using Inje.AIConvergence.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,18 @@ namespace Inje.AIConvergence.Mvc.Controllers
         Categories: await db.Categories.ToListAsync(),
         Products: await db.Products.ToListAsync()
       );
+      try
+      {
+        HttpClient client = clientFactory.CreateClient(name: "Minimal.WebApi");
+        HttpRequestMessage request = new(method: HttpMethod.Get, requestUri: "api/weather");
+        HttpResponseMessage response = await client.SendAsync(request);
+        ViewData["weather"] = await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+      }
+      catch(Exception ex)
+      {
+        _logger.LogWarning($"The Minimal.WebApi service is not responding. Exception: {ex.Message}");
+        ViewData["weather"] = Enumerable.Empty<WeatherForecast>().ToArray();
+      }
       return View(model);
     }
 
