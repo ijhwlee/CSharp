@@ -6,6 +6,7 @@ using static System.Console;
 using Microsoft.EntityFrameworkCore;
 using Inje.AIConvergence.WebApi.Repositories;
 using Microsoft.AspNetCore.HttpLogging;
+using Inje.AIConvergence.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -105,6 +106,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseHealthChecks(path: "/howdoyoufeel");
+
+app.UseMiddleware<SecurityHeaders>();
 
 app.MapControllers();
 
