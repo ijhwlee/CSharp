@@ -67,6 +67,11 @@ builder.Services.AddSwaggerGen(c =>
   c.SwaggerDoc("v1", new() { Title = "Inje University AI Convergence API", Version = "v1" });
 });
 
+builder.Services.AddHealthChecks()
+  .AddDbContextCheck<NorthwindContext>();
+  // execute SELECT 1 using the specified connection string
+  //.AddSqlServer(connectionNorthwind);
+
 var app = builder.Build();
 
 app.UseCors(configurePolicy: options =>
@@ -98,6 +103,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseHealthChecks(path: "/howdoyoufeel");
 
 app.MapControllers();
 
