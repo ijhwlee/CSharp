@@ -19,9 +19,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Mvc", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.WebApi", "Inje.AIConvergence.WebApi\Inje.AIConvergence.WebApi.csproj", "{FB8A0CDB-0662-4106-BAE5-40D7F6F26D9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Common", "Inje.AIConvergence.Common\Inje.AIConvergence.Common.csproj", "{A2FE75B7-59F5-49AB-A142-3C82DD4C7506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common", "Inje.AIConvergence.Common\Inje.AIConvergence.Common.csproj", "{A2FE75B7-59F5-49AB-A142-3C82DD4C7506}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal.WebApi", "Minimal.WebApi\Minimal.WebApi.csproj", "{37AF3A55-BB10-436D-89BA-A2CD526C6A73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minimal.WebApi", "Minimal.WebApi\Minimal.WebApi.csproj", "{37AF3A55-BB10-436D-89BA-A2CD526C6A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorServer", "Inje.AIConvergence.BlazorServer\Inje.AIConvergence.BlazorServer.csproj", "{327ADD49-5DCB-457B-8E31-10885FE4D50E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorWasm.Server", "Inje.AIConvergence.BlazorWasm\Server\Inje.AIConvergence.BlazorWasm.Server.csproj", "{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorWasm.Client", "Inje.AIConvergence.BlazorWasm\Client\Inje.AIConvergence.BlazorWasm.Client.csproj", "{49F6962E-F928-4E1F-8095-DB1458B77406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorWasm.Shared", "Inje.AIConvergence.BlazorWasm\Shared\Inje.AIConvergence.BlazorWasm.Shared.csproj", "{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +77,22 @@ Global
 		{37AF3A55-BB10-436D-89BA-A2CD526C6A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37AF3A55-BB10-436D-89BA-A2CD526C6A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37AF3A55-BB10-436D-89BA-A2CD526C6A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327ADD49-5DCB-457B-8E31-10885FE4D50E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327ADD49-5DCB-457B-8E31-10885FE4D50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327ADD49-5DCB-457B-8E31-10885FE4D50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327ADD49-5DCB-457B-8E31-10885FE4D50E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F6962E-F928-4E1F-8095-DB1458B77406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F6962E-F928-4E1F-8095-DB1458B77406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F6962E-F928-4E1F-8095-DB1458B77406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F6962E-F928-4E1F-8095-DB1458B77406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
