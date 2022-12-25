@@ -23,13 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Common",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minimal.WebApi", "Minimal.WebApi\Minimal.WebApi.csproj", "{37AF3A55-BB10-436D-89BA-A2CD526C6A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorServer", "Inje.AIConvergence.BlazorServer\Inje.AIConvergence.BlazorServer.csproj", "{327ADD49-5DCB-457B-8E31-10885FE4D50E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.BlazorServer", "Inje.AIConvergence.BlazorServer\Inje.AIConvergence.BlazorServer.csproj", "{327ADD49-5DCB-457B-8E31-10885FE4D50E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorWasm.Server", "Inje.AIConvergence.BlazorWasm\Server\Inje.AIConvergence.BlazorWasm.Server.csproj", "{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.BlazorWasm.Server", "Inje.AIConvergence.BlazorWasm\Server\Inje.AIConvergence.BlazorWasm.Server.csproj", "{EE2F46DE-9711-4BCA-B6B5-BA459B63729D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorWasm.Client", "Inje.AIConvergence.BlazorWasm\Client\Inje.AIConvergence.BlazorWasm.Client.csproj", "{49F6962E-F928-4E1F-8095-DB1458B77406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.BlazorWasm.Client", "Inje.AIConvergence.BlazorWasm\Client\Inje.AIConvergence.BlazorWasm.Client.csproj", "{49F6962E-F928-4E1F-8095-DB1458B77406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.BlazorWasm.Shared", "Inje.AIConvergence.BlazorWasm\Shared\Inje.AIConvergence.BlazorWasm.Shared.csproj", "{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.BlazorWasm.Shared", "Inje.AIConvergence.BlazorWasm\Shared\Inje.AIConvergence.BlazorWasm.Shared.csproj", "{81A5E6EE-5EFA-41B1-A4FB-441EF6A8B4B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

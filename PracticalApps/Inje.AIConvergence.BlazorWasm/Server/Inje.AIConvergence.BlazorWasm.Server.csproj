@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Inje.AIConvergence.Common.DataContext.SqlServer\Inje.AIConvergence.Common.DataContext.SqlServer.csproj" />
     <ProjectReference Include="..\Client\Inje.AIConvergence.BlazorWasm.Client.csproj" />
     <ProjectReference Include="..\Shared\Inje.AIConvergence.BlazorWasm.Shared.csproj" />
   </ItemGroup>
