@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
 using Inje.AIConvergence.Shared;
+using static System.Console;
 
 var builder = WebApplication.CreateBuilder(args);
 

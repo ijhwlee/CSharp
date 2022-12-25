@@ -1,1 +1,15 @@
 GET https://localhost:5011/catalog/categories/ HTTP/1.1
+###
+GET https://localhost:5011/catalog/products/ HTTP/1.1
+###
+GET https://localhost:5011/catalog/suppliers/ HTTP/1.1
+###
+GET https://localhost:5011/ordersystem/shippers/ HTTP/1.1
+###
+GET https://localhost:5011/catalog/categories/?$select=CategoryId,CategoryName
+###
+GET https://localhost:5011/catalog/products/?$filter=startswith(ProductName,'Ch') or (UnitPrice gt 50)
+###
+
+###
+GET https://localhost:5011/catalog/products/?$filter=startswith(ProductName, 'Cha')&$select=ProductId,ProductName,UnitPrice

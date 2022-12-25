@@ -31,7 +31,9 @@ public static class NorthwindContextExtensions
     }
     WriteLine($"[DEBUG-hwlee]NorthwindExtensions:AddNorthwindContext(after) connectionString = {connectionString}");
     services.AddDbContext<NorthwindContext>(options =>
-      options.UseSqlServer(connectionString));
+      options.UseSqlServer(connectionString)
+      .UseLoggerFactory(new ConsoleLoggerFactory())
+      );
     return services;
   }
 }
