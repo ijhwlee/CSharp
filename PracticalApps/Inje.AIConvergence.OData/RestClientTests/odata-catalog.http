@@ -1,0 +1,1 @@
+GET https://localhost:5011/catalog/categories/ HTTP/1.1
