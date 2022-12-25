@@ -28,3 +28,4 @@ public int IntValue
 will define infinite loop for get_IntValue.
 
 - **2022/12/25** To isntall dotnet work tools for .NET 6, use dotnet workload install wasm-tools-net6
+- - There will be error in `_Hosts.cshtm` if one define the same routing page like "Object reference not set to an instance of an object."
