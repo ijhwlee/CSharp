@@ -14,7 +14,7 @@ WriteLine("[DEBUG-hwlee]000 Program.cs");
 builder.Services.AddControllers();
 builder.Services.AddNorthwindContext();
 WriteLine("[DEBUG-hwlee]001 Program.cs");
-builder.Services.AddSingleton<ISchema, NorthwindSchema>(services => new NorthwindSchema(new SelfActivatingServiceProvider(services)));
+builder.Services.AddScoped<ISchema, NorthwindSchema>(services => new NorthwindSchema(new SelfActivatingServiceProvider(services)));
 //builder.Services.AddGraphQL()
 //  .AddGraphTypes(typeof(NorthwindSchema), ServiceLifetime.Scoped)
 //  .AddDataLoader()
