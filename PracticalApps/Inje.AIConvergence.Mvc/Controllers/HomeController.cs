@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Text;
 using static System.Console;
 
 namespace Inje.AIConvergence.Mvc.Controllers;
@@ -152,6 +153,32 @@ public class HomeController : Controller
     catch (Exception ex)
     {
       _logger.LogWarning($"Inje.AIConvergence.OData service exception: {ex.Message}");
+    }
+    return View();
+  }
+  public async Task<IActionResult> ServicesQL()
+  {
+    WriteLine("[DEBUG-hwlee]HomeController:Services GraphQL ==================");
+    try
+    {
+      HttpClient client = clientFactory.CreateClient(name: "Inje.AIConvergence.GraphQL");
+      HttpRequestMessage request = new(method: HttpMethod.Post, requestUri: "graphql");
+      request.Content = new StringContent(content: @"{products (categoryId: 8) {productId productName unitsInStock}}",
+        encoding: Encoding.UTF8,
+        mediaType: "application/graphql");
+      HttpResponseMessage response = await client.SendAsync(request);
+      if (response.IsSuccessStatusCode)
+      {
+        ViewData["seafoodProducts"] = (await response.Content.ReadFromJsonAsync<GraphQLProducts>())?.Data?.Products;
+      }
+      else
+      {
+        ViewData["seafoodProducts"] = Enumerable.Empty<Product>().ToArray();
+      }
+    }
+    catch (Exception ex)
+    {
+      _logger.LogWarning($"Northwind.GraphQL service exception: {ex.Message}");
     }
     return View();
   }

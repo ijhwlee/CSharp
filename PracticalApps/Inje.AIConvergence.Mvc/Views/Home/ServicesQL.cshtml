@@ -1,0 +1,34 @@
+﻿@using Inje.AIConvergence.Shared
+@using Inje.AIConvergence.Common
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+  ViewData["Title"] = "Services GraphQL";
+  Product[]? products = ViewData["seafoodProducts"] as Product[];
+}
+<div class="text-center">
+   <h1 class="display-4">@ViewData["Title"]</h1>
+  @if (ViewData["seafoodProducts"] != null)
+   {
+    <h2>Products of Seafood using GraphQL modified</h2>
+    <h2>@products?.Length products found.</h2>
+      <p>
+      @if (products is null)
+      {
+        <span class="badge bg-info">No products found.</span>
+      }
+      else
+      {
+        @foreach (Product p in products)
+        {
+          <span class="badge bg-info">
+            @p.ProductId
+            @p.ProductName
+            @(p.UnitPrice is null ? "" : p.UnitPrice.Value.ToString("$#,##0.00"))
+          </span>
+        }
+      }
+    </p>
+  }
+</div>
