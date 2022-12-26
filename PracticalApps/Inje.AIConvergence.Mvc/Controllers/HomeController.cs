@@ -77,6 +77,23 @@ public class HomeController : Controller
     }
     return View(model);
   }
+  public async Task<IActionResult> Category(int? id)
+  {
+    if (!id.HasValue)
+    {
+      return Redirect("/Home");
+    }
+    Category? model = await db.Categories.SingleOrDefaultAsync(p => p.CategoryId == id);
+    if (model == null)
+    {
+      return NotFound($"CategoryId {id} is not found.");
+    }
+    if (model.Products == null || model.Products.Count == 0)
+    {
+      model.Products = await db.Products.Where(p => p.CategoryId == id).ToListAsync();
+    }
+    return View(model);
+  }
   public IActionResult ModelBinding()
   {
     return View();
