@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.BlazorWa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Blazor.Customers", "Inje.AIConvergence.Blazor.Customers\Inje.AIConvergence.Blazor.Customers.csproj", "{21EB9FA1-FD42-44BF-ADB4-863A50E5AEE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.OData", "Inje.AIConvergence.OData\Inje.AIConvergence.OData.csproj", "{299101DC-D870-49FE-AAD1-C36884AB54AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.OData", "Inje.AIConvergence.OData\Inje.AIConvergence.OData.csproj", "{299101DC-D870-49FE-AAD1-C36884AB54AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.GraphQL", "Inje.AIConvergence.GraphQL\Inje.AIConvergence.GraphQL.csproj", "{15944D17-06FF-4242-B48A-52ABAD3D15FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{299101DC-D870-49FE-AAD1-C36884AB54AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{299101DC-D870-49FE-AAD1-C36884AB54AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{299101DC-D870-49FE-AAD1-C36884AB54AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15944D17-06FF-4242-B48A-52ABAD3D15FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15944D17-06FF-4242-B48A-52ABAD3D15FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15944D17-06FF-4242-B48A-52ABAD3D15FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15944D17-06FF-4242-B48A-52ABAD3D15FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
