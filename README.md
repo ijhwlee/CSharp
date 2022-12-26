@@ -29,3 +29,15 @@ will define infinite loop for get_IntValue.
 
 - **2022/12/25** To isntall dotnet work tools for .NET 6, use dotnet workload install wasm-tools-net6
 - - There will be error in `_Hosts.cshtm` if one define the same routing page like "Object reference not set to an instance of an object."
+
+- **2022/12/26** The working example for GraphQL example is based on the code
+```
+public class StarWarsQuery : ObjectGraphType
+{
+  public StarWarsQuery()
+  {
+    Field<DroidType>("hero")
+      .Resolve(context => new Droid { Id = "1", Name = "R2-D2" });
+  }
+}
+```
