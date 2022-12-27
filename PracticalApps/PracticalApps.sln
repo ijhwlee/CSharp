@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.OData", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.GraphQL", "Inje.AIConvergence.GraphQL\Inje.AIConvergence.GraphQL.csproj", "{15944D17-06FF-4242-B48A-52ABAD3D15FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.gRPC", "Inje.AIConvergence.gRPC\Inje.AIConvergence.gRPC.csproj", "{35838C46-0CCE-422D-A8A7-BAEED90F0FEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.gRPC", "Inje.AIConvergence.gRPC\Inje.AIConvergence.gRPC.csproj", "{35838C46-0CCE-422D-A8A7-BAEED90F0FEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

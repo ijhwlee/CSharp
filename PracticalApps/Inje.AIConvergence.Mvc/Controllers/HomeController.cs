@@ -207,12 +207,10 @@ public class HomeController : Controller
     {
       using (GrpcChannel channel = GrpcChannel.ForAddress("https://localhost:5015"))
       {
-        
-        //Greeter.GreeterClient greeter = new(channel);
-        //HelloReply reply = await greeter.SayHelloAsync(
-        //  new HelloRequest { Name = "Henrietta" });
-        //string greeting = "Greeting from gRPC service: " + reply.Message;
-        string greeting = "Greeting from gRPC service: ";
+        var input = new HelloRequest { Name = "이형원" };
+        Greeter.GreeterClient greeter = new(channel);
+        HelloReply reply = await greeter.SayHelloAsync(input);
+        string greeting = "Greeting from gRPC service: " + reply.Message;
         ViewData["greeting"] = greeting;
       }
     }
