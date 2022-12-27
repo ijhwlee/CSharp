@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Text;
+using Grpc.Net.Client;
+//using GrpcGreeterClient;
 using static System.Console;
 
 namespace Inje.AIConvergence.Mvc.Controllers;
@@ -196,6 +198,27 @@ public class HomeController : Controller
     catch (Exception ex)
     {
       _logger.LogWarning($"Northwind.GraphQL service exception: {ex.Message}");
+    }
+    return View();
+  }
+  public async Task<IActionResult> ServicesgRPC()
+  {
+    WriteLine("[DEBUG-hwlee]HomeController:Services gRPC ==================");
+    try
+    {
+      using (GrpcChannel channel = GrpcChannel.ForAddress("https://localhost:5015"))
+      {
+        //Greeter.GreeterClient greeter = new(channel);
+        //HelloReply reply = await greeter.SayHelloAsync(
+        //  new HelloRequest { Name = "Henrietta" });
+        //string greeting = "Greeting from gRPC service: " + reply.Message;
+        string greeting = "Greeting from gRPC service: ";
+        ViewData["greeting"] = greeting;
+      }
+    }
+    catch (Exception)
+    {
+      _logger.LogWarning($"Inje.AIConvergence.gRPC service is not responding.");
     }
     return View();
   }

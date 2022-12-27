@@ -1,0 +1,17 @@
+﻿@using Inje.AIConvergence.Shared
+@using Inje.AIConvergence.Common
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+  ViewData["Title"] = "Services gRPC";
+  string? greeting = ViewData["greeting"] as string;
+}
+<div class="text-center">
+   <h1 class="display-4">@ViewData["Title"]</h1>
+   @if (ViewData["greeting"] != null)
+   {
+    <h2>Greeting message from Google gRPC service</h2>
+    <h3>@greeting</h3>
+   }
+</div>
