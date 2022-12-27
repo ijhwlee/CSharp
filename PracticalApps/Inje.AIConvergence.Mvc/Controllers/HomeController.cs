@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Text;
 using Grpc.Net.Client;
-//using GrpcGreeterClient;
 using static System.Console;
 
 namespace Inje.AIConvergence.Mvc.Controllers;
@@ -208,6 +207,7 @@ public class HomeController : Controller
     {
       using (GrpcChannel channel = GrpcChannel.ForAddress("https://localhost:5015"))
       {
+        
         //Greeter.GreeterClient greeter = new(channel);
         //HelloReply reply = await greeter.SayHelloAsync(
         //  new HelloRequest { Name = "Henrietta" });

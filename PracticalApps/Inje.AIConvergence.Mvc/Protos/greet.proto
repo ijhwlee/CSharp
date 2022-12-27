@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-//option csharp_namespace = "GrpcGreeterClient";
 option csharp_namespace = "Inje.AIConvergence.Mvc";
 
 package greet;

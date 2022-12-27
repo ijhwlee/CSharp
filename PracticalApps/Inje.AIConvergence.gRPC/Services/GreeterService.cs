@@ -3,7 +3,7 @@ using Inje.AIConvergence.gRPC;
 
 namespace Inje.AIConvergence.gRPC.Services;
 
-public class GreeterService : GrpcGreeterClient
+public class GreeterService : Greeter.GreeterBase
 {
   private readonly ILogger<GreeterService> _logger;
   public GreeterService(ILogger<GreeterService> logger)
