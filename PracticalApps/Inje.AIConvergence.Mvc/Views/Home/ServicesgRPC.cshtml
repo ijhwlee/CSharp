@@ -11,7 +11,13 @@
    <h1 class="display-4">@ViewData["Title"]</h1>
    @if (ViewData["greeting"] != null)
    {
-    <h2>Greeting message from Google gRPC service</h2>
-    <h3>@greeting</h3>
+    <p class="alert alert-primary">@greeting</p>
    }
+  @if (ViewData["shipper"] != null)
+  {
+    Inje.AIConvergence.Shared.Shipper? shipper = ViewData["shipper"] as Inje.AIConvergence.Shared.Shipper;
+    <p class="alert alert-danger">
+      ShipperId: @shipper?.ShipperId, CompanyName: @shipper?.CompanyName, Phone: @shipper?.Phone
+    </p>
+  }
 </div>

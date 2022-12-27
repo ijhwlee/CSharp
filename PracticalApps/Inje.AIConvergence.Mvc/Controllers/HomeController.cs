@@ -218,6 +218,25 @@ public class HomeController : Controller
     {
       _logger.LogWarning($"Inje.AIConvergence.gRPC service is not responding.");
     }
+    try
+    {
+      using (GrpcChannel channel =
+      GrpcChannel.ForAddress("https://localhost:5015"))
+      {
+        Shipper.ShipperClient shipr = new(channel);
+        ShipperReply reply = await shipr.GetShipperAsync(new ShipperRequest { ShipperId = 3 });
+        ViewData["shipper"] = new Inje.AIConvergence.Shared.Shipper
+        {
+          ShipperId = reply.ShipperId,
+          CompanyName = reply.CompanyName,
+          Phone = reply.Phone
+        };
+      }
+    }
+    catch (Exception)
+    {
+      _logger.LogWarning($"Northwind.gRPC service is not responding.");
+    }
     return View();
   }
 }
