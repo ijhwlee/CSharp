@@ -1,4 +1,5 @@
 using Inje.AIConvergence.Mvc.Data;
+using Inje.AIConvergence.Mvc.Hubs;
 using Inje.AIConvergence.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
