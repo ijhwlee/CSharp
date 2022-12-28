@@ -46,4 +46,4 @@ public class StarWarsQuery : ObjectGraphType
  
 - **2022/12/28** To get query string from `HttpRequestData`, use `query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);` code.
 
-- - Micorsoft.Maui.Essentials namespace is splitted to varions name spaces see [Migration](https://github.com/dotnet/maui/wiki/Migrating-to-RC1)
+- - Micorsoft.Maui.Essentials namespace is splitted to various name spaces see [Migration](https://github.com/dotnet/maui/wiki/Migrating-to-RC1)
