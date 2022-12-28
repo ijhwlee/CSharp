@@ -2,6 +2,11 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.ApplicationModel.Communication;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic; // IEnumerable<T>
+using System.Linq; // OrderBy
+using System.Net.Http; // HttpClient
+using System.Net.Http.Headers; // MediaTypeWithQualityHeaderValue
+using System.Net.Http.Json; // ReadFromJsonAsync<T>
 
 namespace Inje.AIConvergence.Maui6.Customers;
 
@@ -11,7 +16,33 @@ public partial class CustomersListPage : ContentPage
 	{
 		InitializeComponent();
     CustomersListViewModel viewModel = new();
-    viewModel.AddSampleData();
+    try
+    {
+      HttpClient client = new()
+      {
+        BaseAddress = new Uri("https://localhost:5003/")
+        //BaseAddress = new Uri("http://localhost:5002/")
+      };
+      client.DefaultRequestHeaders.Accept.Add(
+        new MediaTypeWithQualityHeaderValue("application/json"));
+      HttpResponseMessage response = client.GetAsync("api/customers").Result;
+      response.EnsureSuccessStatusCode();
+      IEnumerable<CustomerDetailViewModel> customersFromService =
+        response.Content.ReadFromJsonAsync<IEnumerable<CustomerDetailViewModel>>()
+        .Result;
+      foreach (CustomerDetailViewModel c in customersFromService
+        .OrderBy(customer => customer.CompanyName))
+      {
+        viewModel.Add(c);
+      }
+    }
+    catch (Exception ex)
+    {
+      DisplayAlert(title: "Exception",
+        message: $"App will use a sample data dure to: {ex.Message}",
+        cancel: "OK");
+      viewModel.AddSampleData();
+    }
     BindingContext = viewModel;
   }
   async void Customer_Tapped(object sender, ItemTappedEventArgs e)
