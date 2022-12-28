@@ -44,3 +44,4 @@ public class StarWarsQuery : ObjectGraphType
 
 - **2022/12/27** If `Greeter.GreeterClient` does not appear in intellisense, it means that corresponding `GreetGrpc.cs` file was not generated corrected in client side. You can remove `greet.proto` and generate a new file and set correct proprety for `Client Only` and `Protobuf compile`. This will resolve the problem.
  
+- **2022/12/28** To get query string from `HttpRequestData`, use `query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);` code.
