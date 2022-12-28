@@ -25,11 +25,22 @@ public class NumbersToWordsFunction
 
     var query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);
     string? amount = query["amount"];
-    _logger.LogInformation($"Request query = {query}, amount = {amount}");
+    string? system = query["system"]?.ToLower();
+    _logger.LogInformation($"Request query = {query}, amount = {amount}, system = {system}");
     string message = string.Empty;
     var response = req.CreateResponse(HttpStatusCode.OK);
     if (BigInteger.TryParse(amount, out BigInteger number))
     {
+      if (system != null && system.Equals("kor"))
+      {
+        _logger.LogInformation($"Call SetNumberSystem set Korean");
+        NumbersToWords.SetNumberSystem(NumbersToWords.NumberSystem.Kor);
+      }
+      else
+      {
+        _logger.LogInformation($"Call SetNumberSystem set English");
+        NumbersToWords.SetNumberSystem(NumbersToWords.NumberSystem.Eng);
+      }
       message = number.ToWords();
     }
     else
