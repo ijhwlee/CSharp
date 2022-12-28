@@ -6,7 +6,7 @@
              Title="List">
   <ContentPage.Content>
     <ListView ItemsSource="{Binding .}"
-              VerticalOptions="Center"
+              VerticalOptions="Start"
               HorizontalOptions="Center"
               IsPullToRefreshEnabled="True"
               ItemTapped="Customer_Tapped"
