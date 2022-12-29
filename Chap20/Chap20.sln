@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptographyLib", "Cryptogr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HasingApp", "HasingApp\HasingApp.csproj", "{96172A30-F128-4BC0-AE2D-3F2F5C7B4715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigningApp", "SigningApp\SigningApp.csproj", "{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{96172A30-F128-4BC0-AE2D-3F2F5C7B4715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96172A30-F128-4BC0-AE2D-3F2F5C7B4715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96172A30-F128-4BC0-AE2D-3F2F5C7B4715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
