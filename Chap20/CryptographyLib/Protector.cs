@@ -78,14 +78,14 @@ public static class Protector
       return ToBase64String(sha.ComputeHash(Encoding.Unicode.GetBytes(saltedPassword)));
     }
   }
-  public static User Register(string username, string password)
+  public static User Register(string username, string password, string[]? roles=null)
   {
     RandomNumberGenerator rng = RandomNumberGenerator.Create();
     byte[] saltBytes = new byte[16];
     rng.GetBytes(saltBytes);
     string saltText = ToBase64String(saltBytes);
     string saltedHashedPassword = SaltAndHashPassword(password, saltText);
-    User user = new(username, saltText, saltedHashedPassword);
+    User user = new(username, saltText, saltedHashedPassword, roles);
     Users.Add(user.Name, user);
     return user;
   }
@@ -134,5 +134,14 @@ public static class Protector
     byte[] data = new byte[size];
     r.GetBytes(data);
     return data;
+  }
+  public static void LogIn(string username, string password)
+  {
+    if (CheckPassword(username, password))
+    {
+      GenericIdentity gi = new(name: username, type: "Inje.AICovergence.Auth");
+      GenericPrincipal gp = new(identity: gi, roles: Users[username].Roles);
+      Thread.CurrentPrincipal = gp;
+    }
   }
 }

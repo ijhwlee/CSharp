@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HasingApp", "HasingApp\Hasi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigningApp", "SigningApp\SigningApp.csproj", "{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomizingApp", "RandomizingApp\RandomizingApp.csproj", "{EEF648CA-3E76-49FD-882A-7567F98FB1BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomizingApp", "RandomizingApp\RandomizingApp.csproj", "{EEF648CA-3E76-49FD-882A-7567F98FB1BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureApp", "SecureApp\SecureApp.csproj", "{A07533B9-CCD0-4A00-8230-4139A9D89525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07533B9-CCD0-4A00-8230-4139A9D89525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07533B9-CCD0-4A00-8230-4139A9D89525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07533B9-CCD0-4A00-8230-4139A9D89525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07533B9-CCD0-4A00-8230-4139A9D89525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
