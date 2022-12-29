@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptionApp", "EncryptionApp\EncryptionApp.csproj", "{2DF4DBE1-4064-438E-99A9-DEE61ABBFBC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptionApp", "EncryptionApp\EncryptionApp.csproj", "{2DF4DBE1-4064-438E-99A9-DEE61ABBFBC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptographyLib", "CryptographyLib\CryptographyLib.csproj", "{3FF48A30-5C63-449D-9E3F-8C1A1C5EB555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptographyLib", "CryptographyLib\CryptographyLib.csproj", "{3FF48A30-5C63-449D-9E3F-8C1A1C5EB555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HasingApp", "HasingApp\HasingApp.csproj", "{96172A30-F128-4BC0-AE2D-3F2F5C7B4715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HasingApp", "HasingApp\HasingApp.csproj", "{96172A30-F128-4BC0-AE2D-3F2F5C7B4715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigningApp", "SigningApp\SigningApp.csproj", "{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigningApp", "SigningApp\SigningApp.csproj", "{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomizingApp", "RandomizingApp\RandomizingApp.csproj", "{EEF648CA-3E76-49FD-882A-7567F98FB1BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF213D65-129D-4E3A-BDCC-1EC495B6BDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF648CA-3E76-49FD-882A-7567F98FB1BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
