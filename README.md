@@ -47,3 +47,5 @@ public class StarWarsQuery : ObjectGraphType
 - **2022/12/28** To get query string from `HttpRequestData`, use `query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);` code.
 
 - - Micorsoft.Maui.Essentials namespace is splitted to various name spaces see [Migration](https://github.com/dotnet/maui/wiki/Migrating-to-RC1)
+
+- **2022/12/29** To build MAUI, you need to install worklod `dotnet workload install maccatalyst` and dotnet workload install ios`
