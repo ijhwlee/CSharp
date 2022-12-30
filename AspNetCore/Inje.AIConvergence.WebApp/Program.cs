@@ -8,6 +8,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+if (System.Environment.MachineName == "LAPTOP-CMAETB3C")
+{
+  //LAPTOP-CMAETB3C
+  connectionString = "Server=.;Database=Inje.AIConvergence.WebApp;Trusted_Connection=True;MultipleActiveResultSets=true";
+}
+else if (System.Environment.MachineName == "HOME-201119")
+{
+  //HOME-201119
+  connectionString = "Server=.\\SQLEXPRESS01;Database=Inje.AIConvergence.WebApp;Trusted_Connection=True;MultipleActiveResultSets=true";
+}
+else if (System.Environment.MachineName == "LAPTOP-8N40M1AT")
+{
+  //LAPTOP-8N40M1AT
+  connectionString = "Server=.\\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;MultipleActiveResultSets=true";
+}
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
