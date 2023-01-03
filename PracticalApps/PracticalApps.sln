@@ -43,7 +43,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.SignalR.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.AzureFuncs", "Inje.AIConvergence.AzureFuncs\Inje.AIConvergence.AzureFuncs.csproj", "{917B1380-E075-43DA-823D-BBBCF49D4727}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.Maui6.Customers", "Inje.AIConvergence.Maui6.Customers\Inje.AIConvergence.Maui6.Customers.csproj", "{5C4628DE-BCED-423A-978F-9A984387DE8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inje.AIConvergence.Maui6.Customers", "Inje.AIConvergence.Maui6.Customers\Inje.AIConvergence.Maui6.Customers.csproj", "{5C4628DE-BCED-423A-978F-9A984387DE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inje.AIConvergence.WeatherTest", "Inje.AIConvergence.WeatherTest\Inje.AIConvergence.WeatherTest.csproj", "{B4B8CC81-B8A6-444E-900D-4C67B3BB3E9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,10 @@ Global
 		{5C4628DE-BCED-423A-978F-9A984387DE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C4628DE-BCED-423A-978F-9A984387DE8E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C4628DE-BCED-423A-978F-9A984387DE8E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B4B8CC81-B8A6-444E-900D-4C67B3BB3E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B8CC81-B8A6-444E-900D-4C67B3BB3E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B8CC81-B8A6-444E-900D-4C67B3BB3E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B8CC81-B8A6-444E-900D-4C67B3BB3E9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
