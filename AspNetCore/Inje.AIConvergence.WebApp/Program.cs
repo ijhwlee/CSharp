@@ -23,6 +23,11 @@ else if (System.Environment.MachineName == "LAPTOP-8N40M1AT")
   //LAPTOP-8N40M1AT
   connectionString = "Server=.\\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;MultipleActiveResultSets=true";
 }
+else if (System.Environment.MachineName == "yangjs")
+{
+  //LAPTOP-8N40M1AT
+  connectionString = "Server=YANGJS\\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;MultipleActiveResultSets=true";
+}
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
