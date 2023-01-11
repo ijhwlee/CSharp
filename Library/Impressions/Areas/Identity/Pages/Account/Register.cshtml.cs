@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using NuGet.DependencyResolver;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Impressions.Areas.Identity.Pages.Account;
 
@@ -30,13 +31,15 @@ public class RegisterModel : PageModel
   private readonly IUserEmailStore<IdentityUser> _emailStore;
   private readonly ILogger<RegisterModel> _logger;
   private readonly IEmailSender _emailSender;
+  private readonly IConfiguration _configuration;
 
   public RegisterModel(
       UserManager<IdentityUser> userManager,
       IUserStore<IdentityUser> userStore,
       SignInManager<IdentityUser> signInManager,
       ILogger<RegisterModel> logger,
-      IEmailSender emailSender)
+      IEmailSender emailSender,
+      IConfiguration configuration)
   {
     _userManager = userManager;
     _userStore = userStore;
@@ -44,6 +47,8 @@ public class RegisterModel : PageModel
     _signInManager = signInManager;
     _logger = logger;
     _emailSender = emailSender;
+    _configuration = configuration;
+    //_logger.LogInformation($"[DEBUG-hwlee]RegisterModel: configuration = {configuration}");
   }
 
   /// <summary>
@@ -176,6 +181,8 @@ public class RegisterModel : PageModel
   //here we will check if student number is registered in university systemand get name, department, 학적상태.
   private async Task<bool> CheckStudentNumber()
   {
+    string oracleConnection = _configuration["ConnectionStrings:OracleConnection"];
+    _logger.LogInformation($"Oracle connection string = {oracleConnection}");
     return true;
   }
   private async Task<bool> CheckExist()
