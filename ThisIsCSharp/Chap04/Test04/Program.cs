@@ -7,6 +7,7 @@ namespace Test04
     {
       int a = 0xF0 | 0x0F;
       Console.WriteLine($"a : {a}");
+      Console.WriteLine($"a : {a:X}");
     }
   }
 }
